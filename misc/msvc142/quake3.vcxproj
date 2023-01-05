@@ -20,6 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81CB51C4-B434-4E12-B69B-BAEE102F2852}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'" Label="Configuration">
@@ -66,28 +67,28 @@
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">
-    <OutDir>..\..\build\release_ta-msvc142-x86\</OutDir>
+    <OutDir>..\..\..\..\..\..\GOG Games\Quake III</OutDir>
     <IntDir>..\..\build\release_ta-msvc142-x86\client\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <TargetName>ioquake3.x86</TargetName>
     <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\build\debug-msvc142-x86\</OutDir>
+    <OutDir>..\..\..\..\..\..\GOG Games\Quake III</OutDir>
     <IntDir>..\..\build\debug-msvc142-x86\client\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <TargetName>ioquake3.x86</TargetName>
     <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\..\build\release-msvc142-x86\</OutDir>
+    <OutDir>..\..\..\..\..\..\GOG Games\Quake III</OutDir>
     <IntDir>..\..\build\release-msvc142-x86\client\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <TargetName>ioquake3.x86</TargetName>
     <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">
-    <OutDir>..\..\build\debug_ta-msvc142-x86\</OutDir>
+    <OutDir>..\..\..\..\..\..\GOG Games\Quake III</OutDir>
     <IntDir>..\..\build\debug_ta-msvc142-x86\client\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <TargetName>ioquake3.x86</TargetName>
@@ -299,36 +300,36 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\botlib\be_aas_bspq3.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_cluster.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_debug.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_entity.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_file.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_main.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_move.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_optimize.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_reach.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_route.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_routealt.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_sample.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_char.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_chat.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_gen.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_goal.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_move.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_weap.c" />
-    <ClCompile Include="..\..\code\botlib\be_ai_weight.c" />
-    <ClCompile Include="..\..\code\botlib\be_ea.c" />
-    <ClCompile Include="..\..\code\botlib\be_interface.c" />
-    <ClCompile Include="..\..\code\botlib\l_crc.c" />
-    <ClCompile Include="..\..\code\botlib\l_libvar.c" />
-    <ClCompile Include="..\..\code\botlib\l_log.c" />
-    <ClCompile Include="..\..\code\botlib\l_memory.c" />
-    <ClCompile Include="..\..\code\botlib\l_precomp.c" />
-    <ClCompile Include="..\..\code\botlib\l_script.c" />
-    <ClCompile Include="..\..\code\botlib\l_struct.c" />
-    <ClCompile Include="..\..\code\client\cl_avi.c" />
-    <ClCompile Include="..\..\code\client\cl_cgame.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_bspq3.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_cluster.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_debug.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_entity.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_file.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_main.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_move.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_optimize.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_reach.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_route.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_routealt.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_sample.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_char.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_chat.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_gen.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_goal.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_move.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_weap.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ai_weight.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_ea.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_interface.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_crc.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_libvar.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_log.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_memory.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_precomp.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_script.cpp" />
+    <ClCompile Include="..\..\code\botlib\l_struct.cpp" />
+    <ClCompile Include="..\..\code\client\cl_avi.cpp" />
+    <ClCompile Include="..\..\code\client\cl_cgame.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -337,7 +338,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_cin.c">
+    <ClCompile Include="..\..\code\client\cl_cin.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -346,7 +347,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_console.c">
+    <ClCompile Include="..\..\code\client\cl_console.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -355,8 +356,8 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_curl.c" />
-    <ClCompile Include="..\..\code\client\cl_input.c">
+    <ClCompile Include="..\..\code\client\cl_curl.cpp" />
+    <ClCompile Include="..\..\code\client\cl_input.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -365,7 +366,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_keys.c">
+    <ClCompile Include="..\..\code\client\cl_keys.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -374,7 +375,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_main.c">
+    <ClCompile Include="..\..\code\client\cl_main.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -383,7 +384,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_net_chan.c">
+    <ClCompile Include="..\..\code\client\cl_net_chan.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -392,7 +393,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_parse.c">
+    <ClCompile Include="..\..\code\client\cl_parse.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -401,7 +402,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_scrn.c">
+    <ClCompile Include="..\..\code\client\cl_scrn.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -410,7 +411,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\cl_ui.c">
+    <ClCompile Include="..\..\code\client\cl_ui.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -419,8 +420,8 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\qal.c" />
-    <ClCompile Include="..\..\code\client\snd_adpcm.c">
+    <ClCompile Include="..\..\code\client\qal.cpp" />
+    <ClCompile Include="..\..\code\client\snd_adpcm.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -429,10 +430,10 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\snd_codec.c" />
-    <ClCompile Include="..\..\code\client\snd_codec_ogg.c" />
-    <ClCompile Include="..\..\code\client\snd_codec_wav.c" />
-    <ClCompile Include="..\..\code\client\snd_dma.c">
+    <ClCompile Include="..\..\code\client\snd_codec.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec_ogg.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec_wav.cpp" />
+    <ClCompile Include="..\..\code\client\snd_dma.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -441,8 +442,8 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\snd_main.c" />
-    <ClCompile Include="..\..\code\client\snd_mem.c">
+    <ClCompile Include="..\..\code\client\snd_main.cpp" />
+    <ClCompile Include="..\..\code\client\snd_mem.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -451,7 +452,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\snd_mix.c">
+    <ClCompile Include="..\..\code\client\snd_mix.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -460,8 +461,8 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\client\snd_openal.c" />
-    <ClCompile Include="..\..\code\client\snd_wavelet.c">
+    <ClCompile Include="..\..\code\client\snd_openal.cpp" />
+    <ClCompile Include="..\..\code\client\snd_wavelet.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -470,140 +471,140 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\bands.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_lpc.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\cwrs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\entcode.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\entdec.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\entenc.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\kiss_fft.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\laplace.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\mathops.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\mdct.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\modes.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\pitch.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\quant_bands.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\rate.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\vq.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\A2NLSF.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\ana_filt_bank_1.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\biquad_alt.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander_32.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\check_control_input.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\CNG.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\code_signs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_audio_bandwidth.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_codec.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_SNR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\debug.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decoder_set_fs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_core.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_frame.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_indices.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_parameters.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pitch.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pulses.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\dec_API.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_indices.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_pulses.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\enc_API.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\apply_sine_window_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\autocorrelation_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\burg_modified_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\bwexpander_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\corrMatrix_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\encode_frame_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\energy_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LPC_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LTP_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pitch_lags_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pred_coefs_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\inner_product_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\k2a_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_analysis_filter_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_inv_pred_gain_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_analysis_filter_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_scale_ctrl_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\noise_shape_analysis_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\pitch_analysis_core_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\process_gains_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\regularize_correlations_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\residual_energy_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_copy_vector_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_vector_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\schur_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\sort_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\warped_autocorrelation_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\wrappers_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\gain_quant.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\HP_variable_cutoff.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\inner_prod_aligned.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\interpolate.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\lin2log.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\log2lin.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_analysis_filter.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_fit.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_inv_pred_gain.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LP_variable_cutoff.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF2A.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_decode.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_del_dec_quant.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_encode.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_stabilize.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_unpack.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ_weights_laroia.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ_del_dec.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\pitch_est_tables.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\PLC.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\process_NLSFs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\quant_LTP_gains.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2_3.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_AR2.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_down_FIR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_IIR_FIR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_up2_HQ.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_rom.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\shell_coder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\sigm_Q15.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\sort.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_decode_pred.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_encode_pred.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_find_predictor.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_LR_to_MS.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_MS_to_LR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_quant_pred.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\sum_sqr_shift.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_gain.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_LTP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_NB_MB.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_WB.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_other.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pitch_lag.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pulses_per_block.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\table_LSF_cos.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\VAD.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\VQ_WMat_EC.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\analysis.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp_data.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\repacketizer.c" />
-    <ClCompile Include="..\..\code\qcommon\cmd.c">
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\bands.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_lpc.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\cwrs.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\entcode.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\entdec.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\entenc.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\kiss_fft.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\laplace.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\mathops.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\mdct.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\modes.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\pitch.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\quant_bands.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\rate.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\vq.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\A2NLSF.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\ana_filt_bank_1.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\biquad_alt.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander_32.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\check_control_input.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\CNG.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\code_signs.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_audio_bandwidth.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_codec.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_SNR.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\debug.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decoder_set_fs.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_core.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_frame.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_indices.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_parameters.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pitch.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pulses.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\dec_API.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_indices.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_pulses.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\enc_API.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\apply_sine_window_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\autocorrelation_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\burg_modified_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\bwexpander_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\corrMatrix_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\encode_frame_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\energy_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LPC_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LTP_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pitch_lags_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pred_coefs_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\inner_product_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\k2a_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_analysis_filter_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_inv_pred_gain_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_analysis_filter_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_scale_ctrl_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\noise_shape_analysis_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\pitch_analysis_core_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\process_gains_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\regularize_correlations_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\residual_energy_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_copy_vector_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_vector_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\schur_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\sort_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\warped_autocorrelation_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\wrappers_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\gain_quant.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\HP_variable_cutoff.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\inner_prod_aligned.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\interpolate.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\lin2log.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\log2lin.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_analysis_filter.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_fit.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_inv_pred_gain.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LP_variable_cutoff.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF2A.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_decode.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_del_dec_quant.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_encode.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_stabilize.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_unpack.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ_weights_laroia.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ_del_dec.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\pitch_est_tables.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\PLC.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\process_NLSFs.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\quant_LTP_gains.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2_3.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_AR2.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_down_FIR.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_IIR_FIR.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_up2_HQ.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_rom.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\shell_coder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\sigm_Q15.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\sort.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_decode_pred.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_encode_pred.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_find_predictor.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_LR_to_MS.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_MS_to_LR.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_quant_pred.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\sum_sqr_shift.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_gain.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_LTP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_NB_MB.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_WB.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_other.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pitch_lag.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pulses_per_block.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\table_LSF_cos.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\VAD.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\VQ_WMat_EC.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\analysis.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp_data.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\repacketizer.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cmd.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -612,7 +613,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\cm_load.c">
+    <ClCompile Include="..\..\code\qcommon\cm_load.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -621,7 +622,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\cm_patch.c">
+    <ClCompile Include="..\..\code\qcommon\cm_patch.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -630,7 +631,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\cm_polylib.c">
+    <ClCompile Include="..\..\code\qcommon\cm_polylib.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -639,7 +640,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\cm_test.c">
+    <ClCompile Include="..\..\code\qcommon\cm_test.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -648,7 +649,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\cm_trace.c">
+    <ClCompile Include="..\..\code\qcommon\cm_trace.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -657,7 +658,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\common.c">
+    <ClCompile Include="..\..\code\qcommon\common.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -666,7 +667,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\cvar.c">
+    <ClCompile Include="..\..\code\qcommon\cvar.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -675,7 +676,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\files.c">
+    <ClCompile Include="..\..\code\qcommon\files.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -684,7 +685,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\huffman.c">
+    <ClCompile Include="..\..\code\qcommon\huffman.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -693,7 +694,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\ioapi.c">
+    <ClCompile Include="..\..\code\qcommon\ioapi.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -702,7 +703,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\md4.c">
+    <ClCompile Include="..\..\code\qcommon\md4.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -711,7 +712,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\md5.c">
+    <ClCompile Include="..\..\code\qcommon\md5.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -720,7 +721,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\msg.c">
+    <ClCompile Include="..\..\code\qcommon\msg.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -729,7 +730,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\net_chan.c">
+    <ClCompile Include="..\..\code\qcommon\net_chan.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -738,11 +739,11 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\net_ip.c" />
-    <ClCompile Include="..\..\code\qcommon\puff.c" />
-    <ClCompile Include="..\..\code\qcommon\q_math.c" />
-    <ClCompile Include="..\..\code\qcommon\q_shared.c" />
-    <ClCompile Include="..\..\code\qcommon\unzip.c">
+    <ClCompile Include="..\..\code\qcommon\net_ip.cpp" />
+    <ClCompile Include="..\..\code\qcommon\puff.cpp" />
+    <ClCompile Include="..\..\code\qcommon\q_math.cpp" />
+    <ClCompile Include="..\..\code\qcommon\q_shared.cpp" />
+    <ClCompile Include="..\..\code\qcommon\unzip.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -751,7 +752,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\vm.c">
+    <ClCompile Include="..\..\code\qcommon\vm.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -760,7 +761,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\vm_interpreted.c">
+    <ClCompile Include="..\..\code\qcommon\vm_interpreted.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -769,7 +770,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\qcommon\vm_x86.c">
+    <ClCompile Include="..\..\code\qcommon\vm_x86.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -778,9 +779,9 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\sdl\sdl_input.c" />
-    <ClCompile Include="..\..\code\sdl\sdl_snd.c" />
-    <ClCompile Include="..\..\code\server\sv_bot.c">
+    <ClCompile Include="..\..\code\sdl\sdl_input.cpp" />
+    <ClCompile Include="..\..\code\sdl\sdl_snd.cpp" />
+    <ClCompile Include="..\..\code\server\sv_bot.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -789,7 +790,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_ccmds.c">
+    <ClCompile Include="..\..\code\server\sv_ccmds.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -798,7 +799,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_client.c">
+    <ClCompile Include="..\..\code\server\sv_client.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -807,7 +808,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_game.c">
+    <ClCompile Include="..\..\code\server\sv_game.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -816,7 +817,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_init.c">
+    <ClCompile Include="..\..\code\server\sv_init.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -825,7 +826,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_main.c">
+    <ClCompile Include="..\..\code\server\sv_main.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -834,7 +835,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_net_chan.c">
+    <ClCompile Include="..\..\code\server\sv_net_chan.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -843,7 +844,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_snapshot.c">
+    <ClCompile Include="..\..\code\server\sv_snapshot.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -852,7 +853,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\server\sv_world.c">
+    <ClCompile Include="..\..\code\server\sv_world.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -861,17 +862,17 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
-    <ClCompile Include="..\..\code\sys\con_log.c" />
-    <ClCompile Include="..\..\code\sys\con_passive.c" />
-    <ClCompile Include="..\..\code\sys\sys_autoupdater.c" />
-    <ClCompile Include="..\..\code\sys\sys_main.c" />
-    <ClCompile Include="..\..\code\sys\sys_win32.c" />
-    <ClCompile Include="..\..\code\zlib\adler32.c" />
-    <ClCompile Include="..\..\code\zlib\crc32.c" />
-    <ClCompile Include="..\..\code\zlib\inffast.c" />
-    <ClCompile Include="..\..\code\zlib\inflate.c" />
-    <ClCompile Include="..\..\code\zlib\inftrees.c" />
-    <ClCompile Include="..\..\code\zlib\zutil.c" />
+    <ClCompile Include="..\..\code\sys\con_log.cpp" />
+    <ClCompile Include="..\..\code\sys\con_passive.cpp" />
+    <ClCompile Include="..\..\code\sys\sys_autoupdater.cpp" />
+    <ClCompile Include="..\..\code\sys\sys_main.cpp" />
+    <ClCompile Include="..\..\code\sys\sys_win32.cpp" />
+    <ClCompile Include="..\..\code\zlib\adler32.cpp" />
+    <ClCompile Include="..\..\code\zlib\crc32.cpp" />
+    <ClCompile Include="..\..\code\zlib\inffast.cpp" />
+    <ClCompile Include="..\..\code\zlib\inflate.cpp" />
+    <ClCompile Include="..\..\code\zlib\inftrees.cpp" />
+    <ClCompile Include="..\..\code\zlib\zutil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\code\asm\ftola.asm">

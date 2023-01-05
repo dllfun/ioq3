@@ -1,303 +1,457 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\code\client\cl_avi.c" />
-    <ClCompile Include="..\..\code\client\cl_cgame.c" />
-    <ClCompile Include="..\..\code\client\cl_cin.c" />
-    <ClCompile Include="..\..\code\client\cl_console.c" />
-    <ClCompile Include="..\..\code\client\cl_curl.c" />
-    <ClCompile Include="..\..\code\client\cl_input.c" />
-    <ClCompile Include="..\..\code\client\cl_keys.c" />
-    <ClCompile Include="..\..\code\client\cl_main.c" />
-    <ClCompile Include="..\..\code\client\cl_net_chan.c" />
-    <ClCompile Include="..\..\code\client\cl_parse.c" />
-    <ClCompile Include="..\..\code\client\cl_scrn.c" />
-    <ClCompile Include="..\..\code\client\cl_ui.c" />
-    <ClCompile Include="..\..\code\client\qal.c" />
-    <ClCompile Include="..\..\code\client\snd_adpcm.c" />
-    <ClCompile Include="..\..\code\client\snd_codec.c" />
-    <ClCompile Include="..\..\code\client\snd_codec_ogg.c" />
-    <ClCompile Include="..\..\code\client\snd_codec_wav.c" />
-    <ClCompile Include="..\..\code\client\snd_dma.c" />
-    <ClCompile Include="..\..\code\client\snd_main.c" />
-    <ClCompile Include="..\..\code\client\snd_mem.c" />
-    <ClCompile Include="..\..\code\client\snd_mix.c" />
-    <ClCompile Include="..\..\code\client\snd_openal.c" />
-    <ClCompile Include="..\..\code\client\snd_wavelet.c" />
-    <ClCompile Include="..\..\code\qcommon\cmd.c" />
-    <ClCompile Include="..\..\code\qcommon\cm_load.c" />
-    <ClCompile Include="..\..\code\qcommon\cm_patch.c" />
-    <ClCompile Include="..\..\code\qcommon\cm_polylib.c" />
-    <ClCompile Include="..\..\code\qcommon\cm_test.c" />
-    <ClCompile Include="..\..\code\qcommon\cm_trace.c" />
-    <ClCompile Include="..\..\code\qcommon\common.c" />
-    <ClCompile Include="..\..\code\qcommon\cvar.c" />
-    <ClCompile Include="..\..\code\qcommon\files.c" />
-    <ClCompile Include="..\..\code\qcommon\huffman.c" />
-    <ClCompile Include="..\..\code\qcommon\ioapi.c" />
-    <ClCompile Include="..\..\code\qcommon\md4.c" />
-    <ClCompile Include="..\..\code\qcommon\md5.c" />
-    <ClCompile Include="..\..\code\qcommon\msg.c" />
-    <ClCompile Include="..\..\code\qcommon\net_chan.c" />
-    <ClCompile Include="..\..\code\qcommon\net_ip.c" />
-    <ClCompile Include="..\..\code\qcommon\puff.c" />
-    <ClCompile Include="..\..\code\qcommon\q_math.c" />
-    <ClCompile Include="..\..\code\qcommon\q_shared.c" />
-    <ClCompile Include="..\..\code\qcommon\unzip.c" />
-    <ClCompile Include="..\..\code\qcommon\vm.c" />
-    <ClCompile Include="..\..\code\qcommon\vm_interpreted.c" />
-    <ClCompile Include="..\..\code\qcommon\vm_x86.c" />
-    <ClCompile Include="..\..\code\sdl\sdl_input.c" />
-    <ClCompile Include="..\..\code\sdl\sdl_snd.c" />
-    <ClCompile Include="..\..\code\server\sv_bot.c" />
-    <ClCompile Include="..\..\code\server\sv_ccmds.c" />
-    <ClCompile Include="..\..\code\server\sv_client.c" />
-    <ClCompile Include="..\..\code\server\sv_game.c" />
-    <ClCompile Include="..\..\code\server\sv_init.c" />
-    <ClCompile Include="..\..\code\server\sv_main.c" />
-    <ClCompile Include="..\..\code\server\sv_net_chan.c" />
-    <ClCompile Include="..\..\code\server\sv_snapshot.c" />
-    <ClCompile Include="..\..\code\server\sv_world.c" />
-    <ClCompile Include="..\..\code\sys\con_log.c" />
-    <ClCompile Include="..\..\code\sys\con_passive.c" />
-    <ClCompile Include="..\..\code\sys\sys_autoupdater.c" />
-    <ClCompile Include="..\..\code\sys\sys_main.c" />
-    <ClCompile Include="..\..\code\sys\sys_win32.c" />
-    <ClCompile Include="..\..\code\botlib\be_aas_bspq3.c">
+    <ClCompile Include="..\..\code\client\cl_avi.cpp" />
+    <ClCompile Include="..\..\code\client\cl_cgame.cpp" />
+    <ClCompile Include="..\..\code\client\cl_cin.cpp" />
+    <ClCompile Include="..\..\code\client\cl_console.cpp" />
+    <ClCompile Include="..\..\code\client\cl_curl.cpp" />
+    <ClCompile Include="..\..\code\client\cl_input.cpp" />
+    <ClCompile Include="..\..\code\client\cl_keys.cpp" />
+    <ClCompile Include="..\..\code\client\cl_main.cpp" />
+    <ClCompile Include="..\..\code\client\cl_net_chan.cpp" />
+    <ClCompile Include="..\..\code\client\cl_parse.cpp" />
+    <ClCompile Include="..\..\code\client\cl_scrn.cpp" />
+    <ClCompile Include="..\..\code\client\cl_ui.cpp" />
+    <ClCompile Include="..\..\code\client\qal.cpp" />
+    <ClCompile Include="..\..\code\client\snd_adpcm.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec_ogg.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec_wav.cpp" />
+    <ClCompile Include="..\..\code\client\snd_dma.cpp" />
+    <ClCompile Include="..\..\code\client\snd_main.cpp" />
+    <ClCompile Include="..\..\code\client\snd_mem.cpp" />
+    <ClCompile Include="..\..\code\client\snd_mix.cpp" />
+    <ClCompile Include="..\..\code\client\snd_openal.cpp" />
+    <ClCompile Include="..\..\code\client\snd_wavelet.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cmd.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cm_load.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cm_patch.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cm_polylib.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cm_test.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cm_trace.cpp" />
+    <ClCompile Include="..\..\code\qcommon\common.cpp" />
+    <ClCompile Include="..\..\code\qcommon\cvar.cpp" />
+    <ClCompile Include="..\..\code\qcommon\files.cpp" />
+    <ClCompile Include="..\..\code\qcommon\huffman.cpp" />
+    <ClCompile Include="..\..\code\qcommon\ioapi.cpp" />
+    <ClCompile Include="..\..\code\qcommon\md4.cpp" />
+    <ClCompile Include="..\..\code\qcommon\md5.cpp" />
+    <ClCompile Include="..\..\code\qcommon\msg.cpp" />
+    <ClCompile Include="..\..\code\qcommon\net_chan.cpp" />
+    <ClCompile Include="..\..\code\qcommon\net_ip.cpp" />
+    <ClCompile Include="..\..\code\qcommon\puff.cpp" />
+    <ClCompile Include="..\..\code\qcommon\q_math.cpp" />
+    <ClCompile Include="..\..\code\qcommon\q_shared.cpp" />
+    <ClCompile Include="..\..\code\qcommon\unzip.cpp" />
+    <ClCompile Include="..\..\code\qcommon\vm.cpp" />
+    <ClCompile Include="..\..\code\qcommon\vm_interpreted.cpp" />
+    <ClCompile Include="..\..\code\qcommon\vm_x86.cpp" />
+    <ClCompile Include="..\..\code\sdl\sdl_input.cpp" />
+    <ClCompile Include="..\..\code\sdl\sdl_snd.cpp" />
+    <ClCompile Include="..\..\code\server\sv_bot.cpp" />
+    <ClCompile Include="..\..\code\server\sv_ccmds.cpp" />
+    <ClCompile Include="..\..\code\server\sv_client.cpp" />
+    <ClCompile Include="..\..\code\server\sv_game.cpp" />
+    <ClCompile Include="..\..\code\server\sv_init.cpp" />
+    <ClCompile Include="..\..\code\server\sv_main.cpp" />
+    <ClCompile Include="..\..\code\server\sv_net_chan.cpp" />
+    <ClCompile Include="..\..\code\server\sv_snapshot.cpp" />
+    <ClCompile Include="..\..\code\server\sv_world.cpp" />
+    <ClCompile Include="..\..\code\sys\con_log.cpp" />
+    <ClCompile Include="..\..\code\sys\con_passive.cpp" />
+    <ClCompile Include="..\..\code\sys\sys_autoupdater.cpp" />
+    <ClCompile Include="..\..\code\sys\sys_main.cpp" />
+    <ClCompile Include="..\..\code\sys\sys_win32.cpp" />
+    <ClCompile Include="..\..\code\botlib\be_aas_bspq3.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_cluster.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_cluster.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_debug.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_debug.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_entity.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_entity.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_file.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_file.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_main.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_main.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_move.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_move.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_optimize.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_optimize.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_reach.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_reach.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_route.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_route.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_routealt.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_routealt.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_aas_sample.c">
+    <ClCompile Include="..\..\code\botlib\be_aas_sample.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_char.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_char.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_chat.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_chat.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_gen.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_gen.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_goal.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_goal.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_move.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_move.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_weap.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_weap.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ai_weight.c">
+    <ClCompile Include="..\..\code\botlib\be_ai_weight.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_ea.c">
+    <ClCompile Include="..\..\code\botlib\be_ea.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\be_interface.c">
+    <ClCompile Include="..\..\code\botlib\be_interface.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_crc.c">
+    <ClCompile Include="..\..\code\botlib\l_crc.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_libvar.c">
+    <ClCompile Include="..\..\code\botlib\l_libvar.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_log.c">
+    <ClCompile Include="..\..\code\botlib\l_log.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_memory.c">
+    <ClCompile Include="..\..\code\botlib\l_memory.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_precomp.c">
+    <ClCompile Include="..\..\code\botlib\l_precomp.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_script.c">
+    <ClCompile Include="..\..\code\botlib\l_script.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\botlib\l_struct.c">
+    <ClCompile Include="..\..\code\botlib\l_struct.cpp">
       <Filter>botlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\zlib\adler32.c">
+    <ClCompile Include="..\..\code\zlib\adler32.cpp">
       <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\zlib\crc32.c">
+    <ClCompile Include="..\..\code\zlib\crc32.cpp">
       <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\zlib\inffast.c">
+    <ClCompile Include="..\..\code\zlib\inffast.cpp">
       <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\zlib\inflate.c">
+    <ClCompile Include="..\..\code\zlib\inflate.cpp">
       <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\zlib\inftrees.c">
+    <ClCompile Include="..\..\code\zlib\inftrees.cpp">
       <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\zlib\zutil.c">
+    <ClCompile Include="..\..\code\zlib\zutil.cpp">
       <Filter>zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\bands.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_lpc.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\cwrs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\entcode.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\entdec.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\entenc.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\kiss_fft.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\laplace.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\mathops.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\mdct.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\modes.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\pitch.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\quant_bands.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\rate.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\celt\vq.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\A2NLSF.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\ana_filt_bank_1.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\biquad_alt.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander_32.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\check_control_input.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\CNG.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\code_signs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_audio_bandwidth.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_codec.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_SNR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\debug.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decoder_set_fs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_core.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_frame.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_indices.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_parameters.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pitch.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pulses.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\dec_API.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_indices.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_pulses.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\enc_API.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\apply_sine_window_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\autocorrelation_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\burg_modified_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\bwexpander_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\corrMatrix_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\encode_frame_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\energy_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LPC_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LTP_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pitch_lags_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pred_coefs_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\inner_product_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\k2a_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_analysis_filter_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_inv_pred_gain_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_analysis_filter_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_scale_ctrl_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\noise_shape_analysis_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\pitch_analysis_core_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\process_gains_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\regularize_correlations_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\residual_energy_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_copy_vector_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_vector_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\schur_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\sort_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\warped_autocorrelation_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\wrappers_FLP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\gain_quant.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\HP_variable_cutoff.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\inner_prod_aligned.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\interpolate.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\lin2log.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\log2lin.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_analysis_filter.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_fit.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_inv_pred_gain.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\LP_variable_cutoff.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF2A.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_decode.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_del_dec_quant.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_encode.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_stabilize.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_unpack.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ_weights_laroia.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ_del_dec.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\pitch_est_tables.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\PLC.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\process_NLSFs.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\quant_LTP_gains.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2_3.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_AR2.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_down_FIR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_IIR_FIR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_up2_HQ.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_rom.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\shell_coder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\sigm_Q15.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\sort.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_decode_pred.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_encode_pred.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_find_predictor.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_LR_to_MS.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_MS_to_LR.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_quant_pred.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\sum_sqr_shift.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_gain.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_LTP.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_NB_MB.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_WB.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_other.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pitch_lag.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pulses_per_block.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\table_LSF_cos.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\VAD.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\silk\VQ_WMat_EC.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\analysis.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp_data.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_decoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_encoder.c" />
-    <ClCompile Include="..\..\code\opus-1.2.1\src\repacketizer.c" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\bands.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\celt_lpc.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\cwrs.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\entcode.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\entdec.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\entenc.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\kiss_fft.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\laplace.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\mathops.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\mdct.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\modes.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\pitch.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\quant_bands.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\rate.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\celt\vq.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\apply_sine_window_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\autocorrelation_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\burg_modified_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\bwexpander_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\corrMatrix_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\encode_frame_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\energy_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LPC_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_LTP_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pitch_lags_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\find_pred_coefs_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\inner_product_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\k2a_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_analysis_filter_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LPC_inv_pred_gain_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_analysis_filter_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\LTP_scale_ctrl_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\noise_shape_analysis_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\pitch_analysis_core_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\process_gains_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\regularize_correlations_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\residual_energy_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_copy_vector_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\scale_vector_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\schur_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\sort_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\warped_autocorrelation_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\float\wrappers_FLP.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\analysis.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\mlp_data.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_decoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\opus_multistream_encoder.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\src\repacketizer.cpp" />
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\A2NLSF.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\ana_filt_bank_1.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\biquad_alt.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\bwexpander_32.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\check_control_input.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\CNG.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\code_signs.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_audio_bandwidth.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_codec.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\control_SNR.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\debug.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\dec_API.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decoder_set_fs.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_core.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_frame.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_indices.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_parameters.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pitch.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\decode_pulses.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\enc_API.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_indices.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\encode_pulses.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\gain_quant.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\HP_variable_cutoff.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_decoder.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\init_encoder.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\inner_prod_aligned.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\interpolate.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\lin2log.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\log2lin.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LP_variable_cutoff.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_analysis_filter.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_fit.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\LPC_inv_pred_gain.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_decode.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_del_dec_quant.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_encode.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_stabilize.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_unpack.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF_VQ_weights_laroia.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NLSF2A.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\NSQ_del_dec.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\pitch_est_tables.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\PLC.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\process_NLSFs.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\quant_LTP_gains.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_down2_3.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_AR2.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_down_FIR.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_IIR_FIR.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_private_up2_HQ.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\resampler_rom.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\shell_coder.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\sigm_Q15.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\sort.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_decode_pred.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_encode_pred.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_find_predictor.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_LR_to_MS.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_MS_to_LR.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\stereo_quant_pred.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\sum_sqr_shift.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\table_LSF_cos.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_gain.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_LTP.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_NB_MB.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_NLSF_CB_WB.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_other.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pitch_lag.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\tables_pulses_per_block.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\VAD.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\opus-1.2.1\silk\VQ_WMat_EC.cpp">
+      <Filter>opus\silk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\cgame\cg_public.h" />

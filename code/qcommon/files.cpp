@@ -3995,7 +3995,7 @@ void FS_InitFilesystem( void ) {
 	FS_Startup(com_basegame->string);
 
 #ifndef STANDALONE
-	FS_CheckPak0( );
+	//FS_CheckPak0( );
 #endif
 
 	// if we can't find default.cfg, assume that the paths are
@@ -4033,7 +4033,7 @@ void FS_Restart( int checksumFeed ) {
 	FS_Startup(com_basegame->string);
 
 #ifndef STANDALONE
-	FS_CheckPak0( );
+	//FS_CheckPak0( );
 #endif
 
 	// if we can't find default.cfg, assume that the paths are
