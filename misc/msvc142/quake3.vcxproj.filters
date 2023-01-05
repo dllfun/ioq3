@@ -564,6 +564,9 @@
     <ClCompile Include="..\..\code\opus-1.2.1\silk\float\sort_FLP.cpp">
       <Filter>opus\silk\float</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\client\libmumblelink.cpp" />
+    <ClCompile Include="..\..\code\client\snd_altivec.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec_opus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\cgame\cg_public.h" />

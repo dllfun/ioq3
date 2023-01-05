@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\code\cgame\cg_consolecmds.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_draw.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_drawtools.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_effects.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_ents.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_event.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_info.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_localents.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_main.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_marks.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_newDraw.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_particles.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_players.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_playerstate.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_predict.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_scoreboard.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_servercmds.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_snapshot.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_syscalls.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_view.cpp" />
+    <ClCompile Include="..\..\code\cgame\cg_weapons.cpp" />
+    <ClCompile Include="..\..\code\game\bg_lib.cpp" />
+    <ClCompile Include="..\..\code\game\bg_misc.cpp" />
+    <ClCompile Include="..\..\code\game\bg_pmove.cpp" />
+    <ClCompile Include="..\..\code\game\bg_slidemove.cpp" />
+    <ClCompile Include="..\..\code\qcommon\q_math.cpp" />
+    <ClCompile Include="..\..\code\qcommon\q_shared.cpp" />
+    <ClCompile Include="..\..\code\ui\ui_shared.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\code\cgame\cg_local.h" />
+    <ClInclude Include="..\..\code\cgame\cg_public.h" />
+    <ClInclude Include="..\..\code\game\bg_public.h" />
+    <ClInclude Include="..\..\code\qcommon\q_shared.h" />
+    <ClInclude Include="..\..\code\qcommon\surfaceflags.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cgame.def" />
+  </ItemGroup>
+</Project>

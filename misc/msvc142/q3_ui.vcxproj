@@ -489,7 +489,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;Q3_UI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\code\q3_ui\ui_login.cpp" />
     <ClCompile Include="..\..\code\q3_ui\ui_main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
@@ -666,8 +665,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;Q3_UI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\code\q3_ui\ui_rankings.cpp" />
-    <ClCompile Include="..\..\code\q3_ui\ui_rankstatus.cpp" />
     <ClCompile Include="..\..\code\q3_ui\ui_removebots.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
@@ -750,7 +747,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;Q3_UI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\code\q3_ui\ui_signup.cpp" />
     <ClCompile Include="..\..\code\q3_ui\ui_sound.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
@@ -783,7 +779,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;Q3_UI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\code\q3_ui\ui_specifyleague.cpp" />
     <ClCompile Include="..\..\code\q3_ui\ui_specifyserver.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>

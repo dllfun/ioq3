@@ -420,6 +420,7 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
+    <ClCompile Include="..\..\code\client\libmumblelink.cpp" />
     <ClCompile Include="..\..\code\client\qal.cpp" />
     <ClCompile Include="..\..\code\client\snd_adpcm.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
@@ -430,8 +431,10 @@ copy "$(SolutionDir)..\..\code\libs\win32\sdl2.dll" "$(TargetDir)"</Command>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">true</BrowseInformation>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
+    <ClCompile Include="..\..\code\client\snd_altivec.cpp" />
     <ClCompile Include="..\..\code\client\snd_codec.cpp" />
     <ClCompile Include="..\..\code\client\snd_codec_ogg.cpp" />
+    <ClCompile Include="..\..\code\client\snd_codec_opus.cpp" />
     <ClCompile Include="..\..\code\client\snd_codec_wav.cpp" />
     <ClCompile Include="..\..\code\client\snd_dma.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug TA|Win32'">Disabled</Optimization>
