@@ -233,7 +233,7 @@ static struct BufferedFile *ReadBufferedFile(const char *name)
 	 *  Allocate control struct.
 	 */
 
-	BF = (BufferedFile*)ri.Malloc(sizeof(struct BufferedFile));
+	BF = (struct BufferedFile*)ri.Malloc(sizeof(struct BufferedFile));
 	if(!BF)
 	{
 		return(NULL);
@@ -453,7 +453,7 @@ static qboolean FindChunk(struct BufferedFile *BF, uint32_t ChunkType)
 		 *  Read the chunk-header.
 		 */
 
-		CH = (PNG_ChunkHeader*)BufferedFileRead(BF, PNG_ChunkHeader_Size);
+		CH = (struct PNG_ChunkHeader*)BufferedFileRead(BF, PNG_ChunkHeader_Size);
 		if(!CH)
 		{
 			return(qfalse);
@@ -566,7 +566,7 @@ static uint32_t DecompressIDATs(struct BufferedFile *BF, uint8_t **Buffer)
 		 *  Read chunk header
 		 */
 
-		CH = (PNG_ChunkHeader*)BufferedFileRead(BF, PNG_ChunkHeader_Size);
+		CH = (struct PNG_ChunkHeader*)BufferedFileRead(BF, PNG_ChunkHeader_Size);
 		if(!CH)
 		{
 			/*
@@ -641,7 +641,7 @@ static uint32_t DecompressIDATs(struct BufferedFile *BF, uint8_t **Buffer)
 		 *  Read chunk header
 		 */
 
-		CH = (PNG_ChunkHeader*)BufferedFileRead(BF, PNG_ChunkHeader_Size);
+		CH = (struct PNG_ChunkHeader*)BufferedFileRead(BF, PNG_ChunkHeader_Size);
 		if(!CH)
 		{
 			ri.Free(CompressedData); 
@@ -1992,7 +1992,7 @@ void R_LoadPNG(const char *name, byte **pic, int *width, int *height)
 	 *  Read the first chunk-header.
 	 */
 
-	CH = (PNG_ChunkHeader*)BufferedFileRead(ThePNG, PNG_ChunkHeader_Size);
+	CH = (struct PNG_ChunkHeader*)BufferedFileRead(ThePNG, PNG_ChunkHeader_Size);
 	if(!CH)
 	{
 		CloseBufferedFile(ThePNG);
@@ -2022,7 +2022,7 @@ void R_LoadPNG(const char *name, byte **pic, int *width, int *height)
 	 *  Read the IHDR.
 	 */ 
 
-	IHDR = (PNG_Chunk_IHDR*)BufferedFileRead(ThePNG, PNG_Chunk_IHDR_Size);
+	IHDR = (struct PNG_Chunk_IHDR*)BufferedFileRead(ThePNG, PNG_Chunk_IHDR_Size);
 	if(!IHDR)
 	{
 		CloseBufferedFile(ThePNG);
@@ -2114,7 +2114,7 @@ void R_LoadPNG(const char *name, byte **pic, int *width, int *height)
 		 *  Read the chunk-header.
 		 */
 
-		CH = (PNG_ChunkHeader*)BufferedFileRead(ThePNG, PNG_ChunkHeader_Size);
+		CH = (struct PNG_ChunkHeader*)BufferedFileRead(ThePNG, PNG_ChunkHeader_Size);
 		if(!CH)
 		{
 			CloseBufferedFile(ThePNG);
@@ -2216,7 +2216,7 @@ void R_LoadPNG(const char *name, byte **pic, int *width, int *height)
 		 *  Read the chunk-header.
 		 */
 
-		CH = (PNG_ChunkHeader*)BufferedFileRead(ThePNG, PNG_ChunkHeader_Size);
+		CH = (struct PNG_ChunkHeader*)BufferedFileRead(ThePNG, PNG_ChunkHeader_Size);
 		if(!CH)
 		{
 			CloseBufferedFile(ThePNG);

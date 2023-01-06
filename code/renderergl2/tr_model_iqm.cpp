@@ -967,7 +967,7 @@ qboolean R_LoadIQM( model_t *mod, void *buffer, int filesize, const char *mod_na
 		srfIQModel_t *surf;
 
 		iqmData->numVaoSurfaces = iqmData->num_surfaces;
-		iqmData->vaoSurfaces = (srfVaoIQModel_s*)ri.Hunk_Alloc(sizeof(*iqmData->vaoSurfaces) * iqmData->numVaoSurfaces, h_low);
+		iqmData->vaoSurfaces = (struct srfVaoIQModel_s*)ri.Hunk_Alloc(sizeof(*iqmData->vaoSurfaces) * iqmData->numVaoSurfaces, h_low);
 
 		vaoSurf = iqmData->vaoSurfaces;
 		surf = iqmData->surfaces;
