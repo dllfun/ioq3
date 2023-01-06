@@ -226,19 +226,19 @@ int strcmp( const char *string1, const char *string2 ) {
 }
 
 
-char *strchr( const char *string, int c ) {
-	while ( *string ) {
-		if ( *string == c ) {
-			return ( char * )string;
-		}
-		string++;
-	}
-	
-	if(c)
-		return NULL;
-	else
-		return (char *) string;
-}
+//char *strchr( const char *string, int c ) {
+//	while ( *string ) {
+//		if ( *string == c ) {
+//			return ( char * )string;
+//		}
+//		string++;
+//	}
+//	
+//	if(c)
+//		return NULL;
+//	else
+//		return (char *) string;
+//}
 
 char *strrchr(const char *string, int c)
 {

@@ -208,7 +208,7 @@ Q_EXPORT intptr_t vmMain( int command, int arg0, int arg1, int arg2, int arg3, i
 		G_ShutdownGame( arg0 );
 		return 0;
 	case GAME_CLIENT_CONNECT:
-		return (intptr_t)ClientConnect( arg0, arg1, arg2 );
+		return (intptr_t)ClientConnect( arg0, (qboolean)arg1, (qboolean)arg2 );
 	case GAME_CLIENT_THINK:
 		ClientThink( arg0 );
 		return 0;
@@ -503,7 +503,7 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	if ( trap_Cvar_VariableIntegerValue( "bot_enable" ) ) {
 		BotAISetup( restart );
 		BotAILoadMap( restart );
-		G_InitBots( restart );
+		G_InitBots( (qboolean)restart );
 	}
 
 	G_RemapTeamShaders();
@@ -1316,13 +1316,13 @@ qboolean ScoreIsTied( void ) {
 	}
 	
 	if ( g_gametype.integer >= GT_TEAM ) {
-		return level.teamScores[TEAM_RED] == level.teamScores[TEAM_BLUE];
+		return (level.teamScores[TEAM_RED] == level.teamScores[TEAM_BLUE]) ? qtrue : qfalse;
 	}
 
 	a = level.clients[level.sortedClients[0]].ps.persistant[PERS_SCORE];
 	b = level.clients[level.sortedClients[1]].ps.persistant[PERS_SCORE];
 
-	return a == b;
+	return (a == b) ? qtrue : qfalse;
 }
 
 /*

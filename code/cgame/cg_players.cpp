@@ -878,7 +878,6 @@ void CG_NewClientInfo( int clientNum ) {
 	clientInfo_t newInfo;
 	const char	*configstring;
 	const char	*v;
-	char		*slash;
 
 	ci = &cgs.clientinfo[clientNum];
 
@@ -931,7 +930,7 @@ void CG_NewClientInfo( int clientNum ) {
 
 	// team
 	v = Info_ValueForKey( configstring, "t" );
-	newInfo.team = atoi( v );
+	newInfo.team = (team_t)atoi( v );
 
 	// team task
 	v = Info_ValueForKey( configstring, "tt" );
@@ -939,7 +938,7 @@ void CG_NewClientInfo( int clientNum ) {
 
 	// team leader
 	v = Info_ValueForKey( configstring, "tl" );
-	newInfo.teamLeader = atoi(v);
+	newInfo.teamLeader = (qboolean)atoi(v);
 
 	v = Info_ValueForKey( configstring, "g_redteam" );
 	Q_strncpyz(newInfo.redTeam, v, MAX_TEAMNAME);
@@ -972,7 +971,7 @@ void CG_NewClientInfo( int clientNum ) {
 
 		if ( cgs.gametype >= GT_TEAM ) {
 			// keep skin name
-			slash = strchr( v, '/' );
+			const char* slash = strchr( v, '/' );
 			if ( slash ) {
 				Q_strncpyz( newInfo.skinName, slash + 1, sizeof( newInfo.skinName ) );
 			}
@@ -980,14 +979,14 @@ void CG_NewClientInfo( int clientNum ) {
 	} else {
 		Q_strncpyz( newInfo.modelName, v, sizeof( newInfo.modelName ) );
 
-		slash = strchr( newInfo.modelName, '/' );
+		const char* slash = strchr( newInfo.modelName, '/' );
 		if ( !slash ) {
 			// modelName didn not include a skin name
 			Q_strncpyz( newInfo.skinName, "default", sizeof( newInfo.skinName ) );
 		} else {
 			Q_strncpyz( newInfo.skinName, slash + 1, sizeof( newInfo.skinName ) );
 			// truncate modelName
-			*slash = 0;
+			//*slash = 0;
 		}
 	}
 
@@ -1016,7 +1015,7 @@ void CG_NewClientInfo( int clientNum ) {
 
 		if ( cgs.gametype >= GT_TEAM ) {
 			// keep skin name
-			slash = strchr( v, '/' );
+			const char* slash = strchr( v, '/' );
 			if ( slash ) {
 				Q_strncpyz( newInfo.headSkinName, slash + 1, sizeof( newInfo.headSkinName ) );
 			}
@@ -1024,14 +1023,14 @@ void CG_NewClientInfo( int clientNum ) {
 	} else {
 		Q_strncpyz( newInfo.headModelName, v, sizeof( newInfo.headModelName ) );
 
-		slash = strchr( newInfo.headModelName, '/' );
+		const char* slash = strchr( newInfo.headModelName, '/' );
 		if ( !slash ) {
 			// modelName didn not include a skin name
 			Q_strncpyz( newInfo.headSkinName, "default", sizeof( newInfo.headSkinName ) );
 		} else {
 			Q_strncpyz( newInfo.headSkinName, slash + 1, sizeof( newInfo.headSkinName ) );
 			// truncate modelName
-			*slash = 0;
+			//*slash = 0;
 		}
 	}
 
@@ -1040,7 +1039,7 @@ void CG_NewClientInfo( int clientNum ) {
 	if ( !CG_ScanForExistingClientInfo( &newInfo ) ) {
 		qboolean	forceDefer;
 
-		forceDefer = trap_MemoryRemaining() < 4000000;
+		forceDefer = (trap_MemoryRemaining() < 4000000) ? qtrue : qfalse;
 
 		// if we are defering loads, just have it pick the first valid
 		if ( forceDefer || (cg_deferPlayers.integer && !cg_buildScript.integer && !cg.loading ) ) {

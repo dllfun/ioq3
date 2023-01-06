@@ -665,7 +665,7 @@ static void Controls_DrawKeyBinding( void *self )
 	x =	a->generic.x;
 	y = a->generic.y;
 
-	c = (Menu_ItemAtCursor( a->generic.parent ) == a);
+	c = (Menu_ItemAtCursor( a->generic.parent ) == a) ? qtrue : qfalse;
 
 	b1 = g_bindings[a->generic.id].bind1;
 	if (b1 == -1)
@@ -1146,7 +1146,7 @@ static void Controls_ActionEvent( void* ptr, int event )
 	}
 	else if ((event == QM_ACTIVATED) && !s_controls.waitingforkey)
 	{
-		s_controls.waitingforkey = 1;
+		s_controls.waitingforkey = qtrue;
 		Controls_Update();
 	}
 }

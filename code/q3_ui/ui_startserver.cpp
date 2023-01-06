@@ -577,7 +577,7 @@ void StartServer_Cache( void )
 	trap_R_RegisterShaderNoMip( GAMESERVER_ARROWSL );
 	trap_R_RegisterShaderNoMip( GAMESERVER_ARROWSR );
 
-	precache = trap_Cvar_VariableValue("com_buildscript");
+	precache = (qboolean)trap_Cvar_VariableValue("com_buildscript");
 
 	if( precache ) {
 		for( i = 0; i < UI_GetNumArenas(); i++ ) {
@@ -1204,7 +1204,7 @@ static void PlayerName_Draw( void *item ) {
 	y =	s->generic.y;
 
 	style = UI_SMALLFONT;
-	focus = (s->generic.parent->cursor == s->generic.menuPosition);
+	focus = (s->generic.parent->cursor == s->generic.menuPosition) ? qtrue : qfalse;
 
 	if ( s->generic.flags & QMF_GRAYED )
 		color = text_color_disabled;

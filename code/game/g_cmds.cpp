@@ -401,7 +401,7 @@ void Cmd_Noclip_f( gentity_t *ent ) {
 	} else {
 		msg = "noclip ON\n";
 	}
-	ent->client->noclip = !ent->client->noclip;
+	ent->client->noclip = (!ent->client->noclip) ? qtrue : qfalse;
 
 	trap_SendServerCommand( ent-g_entities, va("print \"%s\"", msg));
 }
@@ -620,7 +620,7 @@ void SetTeam( gentity_t *ent, const char *s ) {
 	if(team == TEAM_SPECTATOR && oldTeam != team)
 		AddTournamentQueue(client);
 
-	client->sess.sessionTeam = team;
+	client->sess.sessionTeam = (team_t)team;
 	client->sess.spectatorState = specState;
 	client->sess.spectatorClient = specClient;
 
@@ -885,16 +885,16 @@ void G_Say( gentity_t *ent, gentity_t *target, int mode, const char *chatText ) 
 	default:
 	case SAY_ALL:
 		G_LogPrintf( "say: %s: %s\n", ent->client->pers.netname, chatText );
-		Com_sprintf (name, sizeof(name), "%s%c%c"EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE );
+		Com_sprintf (name, sizeof(name), "%s%c%c" EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE );
 		color = COLOR_GREEN;
 		break;
 	case SAY_TEAM:
 		G_LogPrintf( "sayteam: %s: %s\n", ent->client->pers.netname, chatText );
 		if (Team_GetLocationMsg(ent, location, sizeof(location)))
-			Com_sprintf (name, sizeof(name), EC"(%s%c%c"EC") (%s)"EC": ", 
+			Com_sprintf (name, sizeof(name), EC"(%s%c%c" EC") (%s)" EC": ", 
 				ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE, location);
 		else
-			Com_sprintf (name, sizeof(name), EC"(%s%c%c"EC")"EC": ", 
+			Com_sprintf (name, sizeof(name), EC"(%s%c%c" EC")" EC": ", 
 				ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE );
 		color = COLOR_CYAN;
 		break;
@@ -902,9 +902,9 @@ void G_Say( gentity_t *ent, gentity_t *target, int mode, const char *chatText ) 
 		if (target && target->inuse && target->client && g_gametype.integer >= GT_TEAM &&
 			target->client->sess.sessionTeam == ent->client->sess.sessionTeam &&
 			Team_GetLocationMsg(ent, location, sizeof(location)))
-			Com_sprintf (name, sizeof(name), EC"[%s%c%c"EC"] (%s)"EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE, location );
+			Com_sprintf (name, sizeof(name), EC"[%s%c%c" EC"] (%s)" EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE, location );
 		else
-			Com_sprintf (name, sizeof(name), EC"[%s%c%c"EC"]"EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE );
+			Com_sprintf (name, sizeof(name), EC"[%s%c%c" EC"]" EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE );
 		color = COLOR_MAGENTA;
 		break;
 	}
@@ -1388,7 +1388,7 @@ void Cmd_CallVote_f( gentity_t *ent ) {
 		Com_sprintf( level.voteString, sizeof( level.voteString ), "vstr nextmap");
 		Com_sprintf( level.voteDisplayString, sizeof( level.voteDisplayString ), "%s", level.voteString );
 	} else if ( !Q_stricmp( arg1, "clientkick" ) || !Q_stricmp( arg1, "kick" ) ) {
-		i = ClientNumberFromString( ent, arg2, !Q_stricmp( arg1, "clientkick" ), !Q_stricmp( arg1, "kick" ) );
+		i = ClientNumberFromString( ent, arg2, (!Q_stricmp( arg1, "clientkick" )) ? qtrue : qfalse, (!Q_stricmp( arg1, "kick" ) ) ? qtrue : qfalse);
 		if ( i == -1 ) {
 			return;
 		}

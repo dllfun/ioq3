@@ -699,7 +699,7 @@ float	UI_MachinegunSpinAngle( playerInfo_t *pi ) {
 	if ( pi->barrelSpinning == !(torsoAnim == TORSO_ATTACK) ) {
 		pi->barrelTime = dp_realtime;
 		pi->barrelAngle = AngleMod( angle );
-		pi->barrelSpinning = !!(torsoAnim == TORSO_ATTACK);
+		pi->barrelSpinning = (!!(torsoAnim == TORSO_ATTACK)) ? qtrue : qfalse;
 	}
 
 	return angle;

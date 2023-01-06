@@ -424,7 +424,7 @@ static void GraphicsOptions_GetAspectRatios( void )
 	for( r = 0; resolutions[r]; r++ )
 	{
 		int w, h;
-		char *x;
+		const char *x;
 		char str[ sizeof(ratioBuf[0]) ];
 
 		// calculate resolution's aspect ratio
@@ -472,8 +472,8 @@ static void GraphicsOptions_GetInitialVideo( void )
 	s_ivo.colordepth  = s_graphicsoptions.colordepth.curvalue;
 	s_ivo.driver      = s_graphicsoptions.driver.curvalue;
 	s_ivo.mode        = s_graphicsoptions.mode.curvalue;
-	s_ivo.fullscreen  = s_graphicsoptions.fs.curvalue;
-	s_ivo.extensions  = s_graphicsoptions.allow_extensions.curvalue;
+	s_ivo.fullscreen  = (qboolean)s_graphicsoptions.fs.curvalue;
+	s_ivo.extensions  = (qboolean)s_graphicsoptions.allow_extensions.curvalue;
 	s_ivo.tq          = s_graphicsoptions.tq.curvalue;
 	s_ivo.lighting    = s_graphicsoptions.lighting.curvalue;
 	s_ivo.geometry    = s_graphicsoptions.geometry.curvalue;

@@ -139,7 +139,7 @@ static void UI_CDKeyMenu_DrawKey( void *self ) {
 
 	f = (menufield_s *)self;
 
-	focus = (f->generic.parent->cursor == f->generic.menuPosition);
+	focus = (f->generic.parent->cursor == f->generic.menuPosition) ? qtrue : qfalse;
 
 	style = UI_LEFT;
 	if( focus ) {
