@@ -169,7 +169,7 @@ static void GLimp_DetectAvailableModes(void)
 		return;
 	}
 
-	modes = SDL_calloc( (size_t)numSDLModes, sizeof( SDL_Rect ) );
+	modes = (SDL_Rect*)SDL_calloc( (size_t)numSDLModes, sizeof( SDL_Rect ) );
 	if ( !modes )
 	{
 		ri.Error( ERR_FATAL, "Out of memory" );
@@ -779,7 +779,7 @@ static qboolean GLimp_StartDriverAndSetMode(int mode, qboolean fullscreen, qbool
 		fullscreen = qfalse;
 	}
 	
-	err = GLimp_SetMode(mode, fullscreen, noborder, gl3Core);
+	err = (rserr_t)GLimp_SetMode(mode, fullscreen, noborder, gl3Core);
 
 	switch ( err )
 	{
@@ -885,9 +885,9 @@ static void GLimp_InitExtensions( qboolean fixedFunction )
 		{
 			if ( r_ext_multitexture->value )
 			{
-				qglMultiTexCoord2fARB = SDL_GL_GetProcAddress( "glMultiTexCoord2fARB" );
-				qglActiveTextureARB = SDL_GL_GetProcAddress( "glActiveTextureARB" );
-				qglClientActiveTextureARB = SDL_GL_GetProcAddress( "glClientActiveTextureARB" );
+				qglMultiTexCoord2fARB = (void (APIENTRYP ) (GLenum target, GLfloat s, GLfloat t))SDL_GL_GetProcAddress( "glMultiTexCoord2fARB" );
+				qglActiveTextureARB = (void (APIENTRYP ) (GLenum texture))SDL_GL_GetProcAddress( "glActiveTextureARB" );
+				qglClientActiveTextureARB = (void (APIENTRYP ) (GLenum texture))SDL_GL_GetProcAddress( "glClientActiveTextureARB" );
 
 				if ( qglActiveTextureARB )
 				{
@@ -1008,13 +1008,13 @@ void GLimp_Init( qboolean fixedFunction )
 	ri.Sys_GLimpInit( );
 
 	// Create the window and set up the context
-	if(GLimp_StartDriverAndSetMode(r_mode->integer, r_fullscreen->integer, r_noborder->integer, fixedFunction))
+	if(GLimp_StartDriverAndSetMode(r_mode->integer, (qboolean)r_fullscreen->integer, (qboolean)r_noborder->integer, fixedFunction))
 		goto success;
 
 	// Try again, this time in a platform specific "safe mode"
 	ri.Sys_GLimpSafeInit( );
 
-	if(GLimp_StartDriverAndSetMode(r_mode->integer, r_fullscreen->integer, qfalse, fixedFunction))
+	if(GLimp_StartDriverAndSetMode(r_mode->integer, (qboolean)r_fullscreen->integer, qfalse, fixedFunction))
 		goto success;
 
 	// Finally, try the default screen resolution
@@ -1036,8 +1036,8 @@ success:
 	glConfig.hardwareType = GLHW_GENERIC;
 
 	// Only using SDL_SetWindowBrightness to determine if hardware gamma is supported
-	glConfig.deviceSupportsGamma = !r_ignorehwgamma->integer &&
-		SDL_SetWindowBrightness( SDL_window, 1.0f ) >= 0;
+	glConfig.deviceSupportsGamma = (!r_ignorehwgamma->integer &&
+		SDL_SetWindowBrightness( SDL_window, 1.0f ) >= 0) ? qtrue : qfalse;
 
 	// get our config strings
 	Q_strncpyz( glConfig.vendor_string, (char *) qglGetString (GL_VENDOR), sizeof( glConfig.vendor_string ) );
@@ -1119,11 +1119,11 @@ void GLimp_EndFrame( void )
 		}
 
 		// Is the state we want different from the current state?
-		needToToggle = !!r_fullscreen->integer != fullscreen;
+		needToToggle = (!!r_fullscreen->integer != fullscreen) ? qtrue : qfalse;
 
 		if( needToToggle )
 		{
-			sdlToggled = SDL_SetWindowFullscreen( SDL_window, r_fullscreen->integer ) >= 0;
+			sdlToggled = (SDL_SetWindowFullscreen( SDL_window, r_fullscreen->integer ) >= 0) ? qtrue : qfalse;
 
 			// SDL_WM_ToggleFullScreen didn't work, so do it the slow way
 			if( !sdlToggled )

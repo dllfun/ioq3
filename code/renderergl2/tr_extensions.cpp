@@ -37,8 +37,8 @@ void GLimp_InitExtraExtensions(void)
 	qboolean q_gl_version_at_least_3_0;
 	qboolean q_gl_version_at_least_3_2;
 
-	q_gl_version_at_least_3_0 = QGL_VERSION_ATLEAST( 3, 0 );
-	q_gl_version_at_least_3_2 = QGL_VERSION_ATLEAST( 3, 2 );
+	q_gl_version_at_least_3_0 = (QGL_VERSION_ATLEAST( 3, 0 )) ? qtrue : qfalse;
+	q_gl_version_at_least_3_2 = (QGL_VERSION_ATLEAST( 3, 2 )) ? qtrue : qfalse;
 
 	// Check if we need Intel graphics specific fixes.
 	glRefConfig.intelGraphics = qfalse;
@@ -64,7 +64,7 @@ void GLimp_InitExtraExtensions(void)
 	glRefConfig.framebufferMultisample = qfalse;
 	if (q_gl_version_at_least_3_0 || SDL_GL_ExtensionSupported(extension))
 	{
-		glRefConfig.framebufferObject = !!r_ext_framebuffer_object->integer;
+		glRefConfig.framebufferObject = (!!r_ext_framebuffer_object->integer) ? qtrue : qfalse;
 		glRefConfig.framebufferBlit = qtrue;
 		glRefConfig.framebufferMultisample = qtrue;
 
@@ -92,7 +92,7 @@ void GLimp_InitExtraExtensions(void)
 		}
 		else
 		{
-			glRefConfig.vertexArrayObject = !!r_arb_vertex_array_object->integer;
+			glRefConfig.vertexArrayObject = (!!r_arb_vertex_array_object->integer) ? qtrue : qfalse;
 		}
 
 		QGL_ARB_vertex_array_object_PROCS;
@@ -109,7 +109,7 @@ void GLimp_InitExtraExtensions(void)
 	glRefConfig.textureFloat = qfalse;
 	if (q_gl_version_at_least_3_0 || SDL_GL_ExtensionSupported(extension))
 	{
-		glRefConfig.textureFloat = !!r_ext_texture_float->integer;
+		glRefConfig.textureFloat = (!!r_ext_texture_float->integer) ? qtrue : qfalse;
 
 		ri.Printf(PRINT_ALL, result[glRefConfig.textureFloat], extension);
 	}
@@ -137,7 +137,7 @@ void GLimp_InitExtraExtensions(void)
 	glRefConfig.seamlessCubeMap = qfalse;
 	if (q_gl_version_at_least_3_2 || SDL_GL_ExtensionSupported(extension))
 	{
-		glRefConfig.seamlessCubeMap = !!r_arb_seamless_cube_map->integer;
+		glRefConfig.seamlessCubeMap = (!!r_arb_seamless_cube_map->integer) ? qtrue : qfalse;
 
 		ri.Printf(PRINT_ALL, result[glRefConfig.seamlessCubeMap], extension);
 	}
@@ -199,10 +199,10 @@ void GLimp_InitExtraExtensions(void)
 	extension = "GL_ARB_texture_compression_rgtc";
 	if (SDL_GL_ExtensionSupported(extension))
 	{
-		qboolean useRgtc = r_ext_compressed_textures->integer >= 1;
+		qboolean useRgtc = (r_ext_compressed_textures->integer >= 1) ? qtrue : qfalse;
 
 		if (useRgtc)
-			glRefConfig.textureCompression |= TCR_RGTC;
+			glRefConfig.textureCompression = (textureCompressionRef_t)(glRefConfig.textureCompression | TCR_RGTC);
 
 		ri.Printf(PRINT_ALL, result[useRgtc], extension);
 	}
@@ -211,16 +211,16 @@ void GLimp_InitExtraExtensions(void)
 		ri.Printf(PRINT_ALL, result[2], extension);
 	}
 
-	glRefConfig.swizzleNormalmap = r_ext_compressed_textures->integer && !(glRefConfig.textureCompression & TCR_RGTC);
+	glRefConfig.swizzleNormalmap = (r_ext_compressed_textures->integer && !(glRefConfig.textureCompression & TCR_RGTC)) ? qtrue : qfalse;
 
 	// GL_ARB_texture_compression_bptc
 	extension = "GL_ARB_texture_compression_bptc";
 	if (SDL_GL_ExtensionSupported(extension))
 	{
-		qboolean useBptc = r_ext_compressed_textures->integer >= 2;
+		qboolean useBptc = (r_ext_compressed_textures->integer >= 2) ? qtrue : qfalse;
 
 		if (useBptc)
-			glRefConfig.textureCompression |= TCR_BPTC;
+			glRefConfig.textureCompression = (textureCompressionRef_t)(glRefConfig.textureCompression | TCR_BPTC);
 
 		ri.Printf(PRINT_ALL, result[useBptc], extension);
 	}
@@ -234,7 +234,7 @@ void GLimp_InitExtraExtensions(void)
 	glRefConfig.directStateAccess = qfalse;
 	if (SDL_GL_ExtensionSupported(extension))
 	{
-		glRefConfig.directStateAccess = !!r_ext_direct_state_access->integer;
+		glRefConfig.directStateAccess = (!!r_ext_direct_state_access->integer) ? qtrue : qfalse;
 
 		// QGL_*_PROCS becomes several functions, do not remove {}
 		if (glRefConfig.directStateAccess)

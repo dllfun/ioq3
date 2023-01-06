@@ -195,7 +195,7 @@ static void GLSL_PrintLog(GLuint programOrShader, glslPrintLog_t type, qboolean 
 	if (maxLength < 1023)
 		msg = msgPart;
 	else
-		msg = ri.Malloc(maxLength);
+		msg = (char*)ri.Malloc(maxLength);
 
 	switch (type)
 	{
@@ -676,7 +676,7 @@ void GLSL_InitUniforms(shaderProgram_t *program)
 		}
 	}
 
-	program->uniformBuffer = ri.Malloc(size);
+	program->uniformBuffer = (char*)ri.Malloc(size);
 }
 
 void GLSL_FinishGPUShader(shaderProgram_t *program)
@@ -1060,7 +1060,7 @@ void GLSL_InitGPUShaders(void)
 	for (i = 0; i < LIGHTDEF_COUNT; i++)
 	{
 		int lightType = i & LIGHTDEF_LIGHTTYPE_MASK;
-		qboolean fastLight = !(r_normalMapping->integer || r_specularMapping->integer);
+		qboolean fastLight = (!(r_normalMapping->integer || r_specularMapping->integer)) ? qtrue : qfalse;
 
 		// skip impossible combos
 		if ((i & LIGHTDEF_USE_PARALLAXMAP) && !r_parallaxMapping->integer)

@@ -139,10 +139,10 @@ void GL_Cull( int cullType ) {
 		qboolean cullFront;
 		qglEnable( GL_CULL_FACE );
 
-		cullFront = (cullType == CT_FRONT_SIDED);
+		cullFront = (cullType == CT_FRONT_SIDED) ? qtrue : qfalse;
 		if ( backEnd.viewParms.isMirror )
 		{
-			cullFront = !cullFront;
+			cullFront = (!cullFront) ? qtrue : qfalse;
 		}
 
 		qglCullFace( cullFront ? GL_FRONT : GL_BACK );
@@ -1016,7 +1016,7 @@ RB_ColorMask
 */
 const void *RB_ColorMask(const void *data)
 {
-	const colorMaskCommand_t *cmd = data;
+	const colorMaskCommand_t *cmd = (const colorMaskCommand_t*)data;
 	
 	qglColorMask(cmd->rgba[0], cmd->rgba[1], cmd->rgba[2], cmd->rgba[3]);
 	
@@ -1031,7 +1031,7 @@ RB_ClearDepth
 */
 const void *RB_ClearDepth(const void *data)
 {
-	const clearDepthCommand_t *cmd = data;
+	const clearDepthCommand_t *cmd = (const clearDepthCommand_t*)data;
 	
 	if(tess.numIndexes)
 		RB_EndSurface();
@@ -1073,7 +1073,7 @@ const void	*RB_SwapBuffers( const void *data ) {
 		long sum = 0;
 		unsigned char *stencilReadback;
 
-		stencilReadback = ri.Hunk_AllocateTempMemory( glConfig.vidWidth * glConfig.vidHeight );
+		stencilReadback = (unsigned char*)ri.Hunk_AllocateTempMemory( glConfig.vidWidth * glConfig.vidHeight );
 		qglReadPixels( 0, 0, glConfig.vidWidth, glConfig.vidHeight, GL_STENCIL_INDEX, GL_UNSIGNED_BYTE, stencilReadback );
 
 		for ( i = 0; i < glConfig.vidWidth * glConfig.vidHeight; i++ ) {

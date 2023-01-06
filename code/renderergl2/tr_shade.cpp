@@ -399,12 +399,12 @@ static void ProjectDlightTexture( void ) {
 
 static void ComputeShaderColors( shaderStage_t *pStage, vec4_t baseColor, vec4_t vertColor, int blend )
 {
-	qboolean isBlend = ((blend & GLS_SRCBLEND_BITS) == GLS_SRCBLEND_DST_COLOR)
+	qboolean isBlend = (((blend & GLS_SRCBLEND_BITS) == GLS_SRCBLEND_DST_COLOR)
 		|| ((blend & GLS_SRCBLEND_BITS) == GLS_SRCBLEND_ONE_MINUS_DST_COLOR)
 		|| ((blend & GLS_DSTBLEND_BITS) == GLS_DSTBLEND_SRC_COLOR)
-		|| ((blend & GLS_DSTBLEND_BITS) == GLS_DSTBLEND_ONE_MINUS_SRC_COLOR);
+		|| ((blend & GLS_DSTBLEND_BITS) == GLS_DSTBLEND_ONE_MINUS_SRC_COLOR)) ? qtrue : qfalse;
 
-	qboolean is2DDraw = backEnd.currentEntity == &backEnd.entity2D;
+	qboolean is2DDraw = (backEnd.currentEntity == &backEnd.entity2D) ? qtrue : qfalse;
 
 	float overbright = (isBlend || is2DDraw) ? 1.0f : (float)(1 << tr.overbrightBits);
 
@@ -986,7 +986,7 @@ static void RB_IterateStagesGeneric( shaderCommands_t *input )
 	int deformGen;
 	vec5_t deformParams;
 
-	qboolean renderToCubemap = tr.renderCubeFbo && glState.currentFBO == tr.renderCubeFbo;
+	qboolean renderToCubemap = (tr.renderCubeFbo && glState.currentFBO == tr.renderCubeFbo) ? qtrue : qfalse;
 
 	ComputeDeformValues(&deformGen, deformParams);
 
@@ -1290,8 +1290,8 @@ static void RB_IterateStagesGeneric( shaderCommands_t *input )
 			}
 			else
 			{
-				qboolean light = (pStage->glslShaderIndex & LIGHTDEF_LIGHTTYPE_MASK) != 0;
-				qboolean fastLight = !(r_normalMapping->integer || r_specularMapping->integer);
+				qboolean light = ((pStage->glslShaderIndex & LIGHTDEF_LIGHTTYPE_MASK) != 0) ? qtrue : qfalse;
+				qboolean fastLight = (!(r_normalMapping->integer || r_specularMapping->integer)) ? qtrue : qfalse;
 
 				if (pStage->bundle[TB_DIFFUSEMAP].image[0])
 					R_BindAnimatedImageToTMU( &pStage->bundle[TB_DIFFUSEMAP], TB_DIFFUSEMAP);
@@ -1505,16 +1505,16 @@ void RB_StageIteratorGeneric( void )
 	}
 	else
 	{
-		qboolean cullFront = (input->shader->cullType == CT_FRONT_SIDED);
+		qboolean cullFront = (input->shader->cullType == CT_FRONT_SIDED) ? qtrue : qfalse;
 
 		if ( backEnd.viewParms.flags & VPF_DEPTHSHADOW )
-			cullFront = !cullFront;
+			cullFront = (!cullFront) ? qtrue : qfalse;
 
 		if ( backEnd.viewParms.isMirror )
-			cullFront = !cullFront;
+			cullFront = (!cullFront) ? qtrue : qfalse;
 
 		if ( backEnd.currentEntity && backEnd.currentEntity->mirrored )
-			cullFront = !cullFront;
+			cullFront = (!cullFront) ? qtrue : qfalse;
 
 		if (cullFront)
 			GL_Cull( CT_FRONT_SIDED );

@@ -178,7 +178,7 @@ void R_LoadBMP( const char *name, byte **pic, int *width, int *height )
 	if ( height )
 		*height = rows;
 
-	bmpRGBA = ri.Malloc( numPixels * 4 );
+	bmpRGBA = (byte*)ri.Malloc( numPixels * 4 );
 	*pic = bmpRGBA;
 
 

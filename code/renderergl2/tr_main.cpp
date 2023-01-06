@@ -741,7 +741,7 @@ void R_SetupFrustum (viewParms_t *dest, float xmin, float xmax, float ymax, floa
 		dest->frustum[4].type = PLANE_NON_AXIAL;
 		dest->frustum[4].dist = DotProduct (farpoint, dest->frustum[4].normal);
 		SetPlaneSignbits( &dest->frustum[4] );
-		dest->flags |= VPF_FARPLANEFRUSTUM;
+		dest->flags = (viewParmFlags_t)(dest->flags | VPF_FARPLANEFRUSTUM);
 	}
 }
 
@@ -927,7 +927,7 @@ void R_SetupProjectionOrtho(viewParms_t *dest, vec3_t viewBounds[2])
 		SetPlaneSignbits (&dest->frustum[i]);
 	}
 
-	dest->flags |= VPF_FARPLANEFRUSTUM;
+	dest->flags = (viewParmFlags_t)(dest->flags | VPF_FARPLANEFRUSTUM);
 }
 
 /*
@@ -1327,14 +1327,14 @@ qboolean R_MirrorViewBySurface (drawSurf_t *drawSurf, int entityNum) {
 	newParms = tr.viewParms;
 	newParms.isPortal = qtrue;
 	newParms.zFar = 0.0f;
-	newParms.flags &= ~VPF_FARPLANEFRUSTUM;
+	newParms.flags = (viewParmFlags_t)(newParms.flags & ~VPF_FARPLANEFRUSTUM);
 	if ( !R_GetPortalOrientations( drawSurf, entityNum, &surface, &camera, 
 		newParms.pvsOrigin, &newParms.isMirror ) ) {
 		return qfalse;		// bad portal, no portalentity
 	}
 
 	// Never draw viewmodels in portal or mirror views.
-	newParms.flags |= VPF_NOVIEWMODEL;
+	newParms.flags = (viewParmFlags_t)(newParms.flags | VPF_NOVIEWMODEL);
 
 	R_MirrorPoint (oldParms.or.origin, &surface, &camera, newParms.or.origin );
 
@@ -1803,7 +1803,7 @@ void R_RenderDlightCubemaps(const refdef_t *fd)
 		shadowParms.fovX = 90;
 		shadowParms.fovY = 90;
 
-		shadowParms.flags = VPF_SHADOWMAP | VPF_DEPTHSHADOW | VPF_NOVIEWMODEL;
+		shadowParms.flags = (viewParmFlags_t)(VPF_SHADOWMAP | VPF_DEPTHSHADOW | VPF_NOVIEWMODEL);
 		shadowParms.zFar = tr.refdef.dlights[i].radius;
 
 		VectorCopy( tr.refdef.dlights[i].origin, shadowParms.or.origin );
@@ -1903,7 +1903,7 @@ void R_RenderPshadowMaps(const refdef_t *fd)
 				case MOD_MDR:
 				{
 					// FIXME: never actually tested this
-					mdrHeader_t *header = model->modelData;
+					mdrHeader_t *header = (mdrHeader_t*)model->modelData;
 					int frameSize = (size_t)( &((mdrFrame_t *)0)->bones[ header->numBones ] );
 					mdrFrame_t *frame = ( mdrFrame_t * ) ( ( byte * ) header + header->ofsFrames + frameSize * ent->e.frame);
 
@@ -1913,7 +1913,7 @@ void R_RenderPshadowMaps(const refdef_t *fd)
 				case MOD_IQM:
 				{
 					// FIXME: never actually tested this
-					iqmData_t *data = model->modelData;
+					iqmData_t *data = (iqmData_t*)model->modelData;
 					vec3_t diag;
 					float *framebounds;
 
@@ -2101,7 +2101,7 @@ void R_RenderPshadowMaps(const refdef_t *fd)
 		if (glRefConfig.framebufferObject)
 			shadowParms.targetFbo = tr.pshadowFbos[i];
 
-		shadowParms.flags = VPF_DEPTHSHADOW | VPF_NOVIEWMODEL;
+		shadowParms.flags = (viewParmFlags_t)(VPF_DEPTHSHADOW | VPF_NOVIEWMODEL);
 		shadowParms.zFar = shadow->lightRadius;
 
 		VectorCopy(shadow->lightOrigin, shadowParms.or.origin);
@@ -2180,7 +2180,7 @@ void R_RenderPshadowMaps(const refdef_t *fd)
 					SetPlaneSignbits (&dest->frustum[j]);
 				}
 
-				dest->flags |= VPF_FARPLANEFRUSTUM;
+				dest->flags = (viewParmFlags_t)(dest->flags | VPF_FARPLANEFRUSTUM);
 			}
 
 			for (j = 0; j < shadow->numEntities; j++)
@@ -2508,7 +2508,7 @@ void R_RenderSunShadowMaps(const refdef_t *fd, int level)
 		if (glRefConfig.framebufferObject)
 			shadowParms.targetFbo = tr.sunShadowFbo[level];
 
-		shadowParms.flags = VPF_DEPTHSHADOW | VPF_DEPTHCLAMP | VPF_ORTHOGRAPHIC | VPF_NOVIEWMODEL;
+		shadowParms.flags = (viewParmFlags_t)(VPF_DEPTHSHADOW | VPF_DEPTHCLAMP | VPF_ORTHOGRAPHIC | VPF_NOVIEWMODEL);
 		shadowParms.zFar = lightviewBounds[1][0];
 
 		VectorCopy(lightOrigin, shadowParms.or.origin);
@@ -2644,7 +2644,7 @@ void R_RenderCubemapSide( int cubemapIndex, int cubemapSide, qboolean subscene )
 	parms.viewportHeight = tr.renderCubeFbo->height;
 	parms.isPortal = qfalse;
 	parms.isMirror = qtrue;
-	parms.flags =  VPF_NOVIEWMODEL | VPF_NOCUBEMAPS;
+	parms.flags =  (viewParmFlags_t)(VPF_NOVIEWMODEL | VPF_NOCUBEMAPS);
 
 	parms.fovX = 90;
 	parms.fovY = 90;

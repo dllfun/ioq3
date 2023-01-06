@@ -291,7 +291,7 @@ static qboolean RB_UpdateSunFlareVis(void)
 	}
 	
 	qglGetQueryObjectuiv(tr.sunFlareQuery[tr.sunFlareQueryIndex], GL_QUERY_RESULT, &sampleCount);
-	return sampleCount > 0;
+	return (sampleCount > 0) ? qtrue : qfalse;
 }
 
 void RB_SunRays(FBO_t *srcFbo, ivec4_t srcBox, FBO_t *dstFbo, ivec4_t dstBox)

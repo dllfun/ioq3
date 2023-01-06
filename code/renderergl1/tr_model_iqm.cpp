@@ -41,7 +41,7 @@ static qboolean IQM_CheckRange( iqmHeader_t *header, int offset,
 		 offset <= 0 ||
 		 offset > header->filesize ||
 		 offset + count * size < 0 ||
-		 offset + count * size > header->filesize );
+		 offset + count * size > header->filesize ) ? qtrue : qfalse;
 }
 // "multiply" 3x4 matrices, these are assumed to be the top 3 rows
 // of a 4x4 matrix with the last row = (0 0 0 1)
@@ -1065,11 +1065,11 @@ void R_AddIQMSurfaces( trRefEntity_t *ent ) {
 	shader_t		*shader;
 	skin_t			*skin;
 
-	data = tr.currentModel->modelData;
+	data = (iqmData_t*)tr.currentModel->modelData;
 	surface = data->surfaces;
 
 	// don't add third_person objects if not in a portal
-	personalModel = (ent->e.renderfx & RF_THIRD_PERSON) && !tr.viewParms.isPortal;
+	personalModel = ((ent->e.renderfx & RF_THIRD_PERSON) && !tr.viewParms.isPortal) ? qtrue : qfalse;
 
 	if ( ent->e.renderfx & RF_WRAP_FRAMES ) {
 		ent->e.frame %= data->num_frames;
@@ -1142,7 +1142,7 @@ void R_AddIQMSurfaces( trRefEntity_t *ent ) {
 			&& fogNum == 0
 			&& !(ent->e.renderfx & ( RF_NOSHADOW | RF_DEPTHHACK ) ) 
 			&& shader->sort == SS_OPAQUE ) {
-			R_AddDrawSurf( (void *)surface, tr.shadowShader, 0, 0 );
+			R_AddDrawSurf( (surfaceType_t*)surface, tr.shadowShader, 0, 0 );
 		}
 
 		// projection shadows work fine with personal models
@@ -1150,11 +1150,11 @@ void R_AddIQMSurfaces( trRefEntity_t *ent ) {
 			&& fogNum == 0
 			&& (ent->e.renderfx & RF_SHADOW_PLANE )
 			&& shader->sort == SS_OPAQUE ) {
-			R_AddDrawSurf( (void *)surface, tr.projectionShadowShader, 0, 0 );
+			R_AddDrawSurf( (surfaceType_t*)surface, tr.projectionShadowShader, 0, 0 );
 		}
 
 		if( !personalModel ) {
-			R_AddDrawSurf( (void *)surface, shader, fogNum, 0 );
+			R_AddDrawSurf( (surfaceType_t*)surface, shader, fogNum, 0 );
 		}
 
 		surface++;

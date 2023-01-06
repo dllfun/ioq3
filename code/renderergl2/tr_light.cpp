@@ -88,7 +88,7 @@ void R_DlightBmodel( bmodel_t *bmodel ) {
 		mask |= 1 << i;
 	}
 
-	tr.currentEntity->needDlights = (mask != 0);
+	tr.currentEntity->needDlights = (mask != 0) ? qtrue : qfalse;
 
 	// set the dlight bits in all the surfaces
 	for ( i = 0 ; i < bmodel->numSurfaces ; i++ ) {
