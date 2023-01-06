@@ -477,7 +477,7 @@ void SCR_DrawScreenField( stereoFrame_t stereoFrame ) {
 
 	re.BeginFrame( stereoFrame );
 
-	uiFullscreen = (uivm && VM_Call( uivm, UI_IS_FULLSCREEN ));
+	uiFullscreen = (uivm && VM_Call( uivm, UI_IS_FULLSCREEN )) ? qtrue : qfalse;
 
 	// wide aspect ratio screens need to have the sides cleared
 	// unless they are displaying game renderings

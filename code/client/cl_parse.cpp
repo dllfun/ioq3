@@ -224,7 +224,7 @@ void CL_ParseSnapshot( msg_t *msg ) {
 
 	// if we were just unpaused, we can only *now* really let the
 	// change come into effect or the client hangs.
-	cl_paused->modified = 0;
+	cl_paused->modified = qfalse;
 
 	newSnap.messageNum = clc.serverMessageSequence;
 
@@ -361,7 +361,7 @@ void CL_SystemInfoChanged( void ) {
 #endif
 	{
 		s = Info_ValueForKey( systemInfo, "sv_voipProtocol" );
-		clc.voipEnabled = !Q_stricmp(s, "opus");
+		clc.voipEnabled = !Q_stricmp(s, "opus") ? qtrue : qfalse;
 	}
 #endif
 
@@ -923,7 +923,7 @@ void CL_ParseServerMessage( msg_t *msg ) {
 			break;
 		case svc_voipOpus:
 #ifdef USE_VOIP
-			CL_ParseVoip( msg, !clc.voipEnabled );
+			CL_ParseVoip( msg, !clc.voipEnabled ? qtrue : qfalse);
 #endif
 			break;
 		}

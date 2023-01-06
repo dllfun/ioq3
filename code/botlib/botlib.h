@@ -178,7 +178,7 @@ typedef struct botlib_import_s
 	//retrieve the contents at the given point
 	int			(*PointContents)(vec3_t point);
 	//check if the point is in potential visible sight
-	int			(*inPVS)(vec3_t p1, vec3_t p2);
+	qboolean	(*inPVS)(vec3_t p1, vec3_t p2);
 	//retrieve the BSP entity data lump
 	char		*(*BSPEntityData)(void);
 	//

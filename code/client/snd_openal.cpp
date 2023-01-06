@@ -528,7 +528,7 @@ sfxHandle_t S_AL_RegisterSound( const char *sample, qboolean compressed )
 	sfxHandle_t sfx = S_AL_BufferFind(sample);
 
 	if((!knownSfx[sfx].inMemory) && (!knownSfx[sfx].isDefault))
-		S_AL_BufferLoad(sfx, s_alPrecache->integer);
+		S_AL_BufferLoad(sfx, (qboolean)s_alPrecache->integer);
 	knownSfx[sfx].lastUsedTime = Com_Milliseconds();
 
 	if (knownSfx[sfx].isDefault) {
@@ -1006,7 +1006,7 @@ static void S_AL_SrcKill(srcHandle_t src)
 
 	curSource->sfx = 0;
 	curSource->lastUsedTime = 0;
-	curSource->priority = 0;
+	curSource->priority = (alSrcPriority_t)0;
 	curSource->entity = -1;
 	curSource->channel = -1;
 	if(curSource->isActive)
@@ -2539,8 +2539,8 @@ qboolean S_AL_Init( soundInterface_t *si )
 
 
 	// Device enumeration support
-	enumeration_all_ext = qalcIsExtensionPresent(NULL, "ALC_ENUMERATE_ALL_EXT");
-	enumeration_ext = qalcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
+	enumeration_all_ext = qalcIsExtensionPresent(NULL, "ALC_ENUMERATE_ALL_EXT") ? qtrue : qfalse;
+	enumeration_ext = qalcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT") ? qtrue : qfalse;
 
 	if(enumeration_ext || enumeration_all_ext)
 	{

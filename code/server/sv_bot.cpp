@@ -237,7 +237,7 @@ static int BotImport_PointContents(vec3_t point) {
 BotImport_inPVS
 ==================
 */
-static int BotImport_inPVS(vec3_t p1, vec3_t p2) {
+static qboolean BotImport_inPVS(vec3_t p1, vec3_t p2) {
 	return SV_inPVS (p1, p2);
 }
 
@@ -524,7 +524,7 @@ void SV_BotInitBotLib(void) {
 
 	if (debugpolygons) Z_Free(debugpolygons);
 	bot_maxdebugpolys = Cvar_VariableIntegerValue("bot_maxdebugpolys");
-	debugpolygons = Z_Malloc(sizeof(bot_debugpoly_t) * bot_maxdebugpolys);
+	debugpolygons = (bot_debugpoly_t*)Z_Malloc(sizeof(bot_debugpoly_t) * bot_maxdebugpolys);
 
 	botlib_import.Print = BotImport_Print;
 	botlib_import.Trace = BotImport_Trace;

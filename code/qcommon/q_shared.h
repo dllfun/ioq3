@@ -173,7 +173,7 @@ typedef int intptr_t;
   typedef __int64 int64_t;
   typedef __int32 int32_t;
   typedef __int16 int16_t;
-  typedef __int8 int8_t;
+  //typedef __int8 int8_t;
   typedef unsigned __int64 uint64_t;
   typedef unsigned __int32 uint32_t;
   typedef unsigned __int16 uint16_t;
@@ -463,12 +463,12 @@ int Q_isnan(float x);
 
   extern int (*Q_VMftol)(void);
 #elif id386
-  extern long QDECL qftolx87(float f);
-  extern long QDECL qftolsse(float f);
-  extern int QDECL qvmftolx87(void);
-  extern int QDECL qvmftolsse(void);
-  extern void QDECL qsnapvectorx87(vec3_t vec);
-  extern void QDECL qsnapvectorsse(vec3_t vec);
+  extern "C" long QDECL qftolx87(float f);
+  extern "C" long QDECL qftolsse(float f);
+  extern "C" int QDECL qvmftolx87(void);
+  extern "C" int QDECL qvmftolsse(void);
+  extern "C" void QDECL qsnapvectorx87(vec3_t vec);
+  extern "C" void QDECL qsnapvectorsse(vec3_t vec);
 
   extern long (QDECL *Q_ftol)(float f);
   extern int (QDECL *Q_VMftol)(void);

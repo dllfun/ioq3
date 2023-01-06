@@ -330,7 +330,7 @@ FS_Initialized
 */
 
 qboolean FS_Initialized( void ) {
-	return (fs_searchpaths != NULL);
+	return (fs_searchpaths != NULL) ? qtrue : qfalse;
 }
 
 /*
@@ -1078,7 +1078,7 @@ qboolean FS_IsExt(const char *filename, const char *ext, int namelen)
 
 	filename += namelen - extlen;
 
-	return !Q_stricmp(filename, ext);
+	return !Q_stricmp(filename, ext) ? qtrue : qfalse;
 }
 
 /*
@@ -1091,7 +1091,7 @@ Return qtrue if filename has a demo extension
 
 qboolean FS_IsDemoExt(const char *filename, int namelen)
 {
-	char *ext_test;
+	const char *ext_test;
 	int index, protocol;
 
 	ext_test = strrchr(filename, '.');
@@ -1387,7 +1387,7 @@ long FS_FOpenFileRead(const char *filename, fileHandle_t *file, qboolean uniqueF
 	if(!fs_searchpaths)
 		Com_Error(ERR_FATAL, "Filesystem call made without initialization");
 
-	isLocalConfig = !strcmp(filename, "autoexec.cfg") || !strcmp(filename, Q3CONFIG_CFG);
+	isLocalConfig = (!strcmp(filename, "autoexec.cfg") || !strcmp(filename, Q3CONFIG_CFG)) ? qtrue : qfalse;
 	for(search = fs_searchpaths; search; search = search->next)
 	{
 		// autoexec.cfg and q3config.cfg can only be loaded outside of pk3 files.
@@ -1460,7 +1460,7 @@ int FS_FindVM(void **startSearch, char *found, int foundlen, const char *name, i
 
 	Com_sprintf(qvmName, sizeof(qvmName), "vm/%s.qvm", name);
 
-	lastSearch = *startSearch;
+	lastSearch = (searchpath_t*)*startSearch;
 	if(*startSearch == NULL)
 		search = fs_searchpaths;
 	else
@@ -1856,7 +1856,7 @@ long FS_ReadFileDir(const char *qpath, void *searchPath, qboolean unpure, void *
 				return len;
 			}
 
-			buf = Hunk_AllocateTempMemory(len+1);
+			buf = (byte*)Hunk_AllocateTempMemory(len+1);
 			*buffer = buf;
 
 			r = FS_Read( buf, len, com_journalDataFile );
@@ -1876,7 +1876,7 @@ long FS_ReadFileDir(const char *qpath, void *searchPath, qboolean unpure, void *
 		isConfig = qfalse;
 	}
 
-	search = searchPath;
+	search = (searchpath_t*)searchPath;
 
 	if(search == NULL)
 	{
@@ -1916,7 +1916,7 @@ long FS_ReadFileDir(const char *qpath, void *searchPath, qboolean unpure, void *
 	fs_loadCount++;
 	fs_loadStack++;
 
-	buf = Hunk_AllocateTempMemory(len+1);
+	buf = (byte*)Hunk_AllocateTempMemory(len+1);
 	*buffer = buf;
 
 	FS_Read (buf, len, h);
@@ -2052,9 +2052,9 @@ static pack_t *FS_LoadZipFile(const char *zipfile, const char *basename)
 		unzGoToNextFile(uf);
 	}
 
-	buildBuffer = Z_Malloc( (gi.number_entry * sizeof( fileInPack_t )) + len );
+	buildBuffer = (fileInPack_t*)Z_Malloc( (gi.number_entry * sizeof( fileInPack_t )) + len );
 	namePtr = ((char *) buildBuffer) + gi.number_entry * sizeof( fileInPack_t );
-	fs_headerLongs = Z_Malloc( ( gi.number_entry + 1 ) * sizeof(int) );
+	fs_headerLongs = (int*)Z_Malloc( ( gi.number_entry + 1 ) * sizeof(int) );
 	fs_headerLongs[ fs_numHeaderLongs++ ] = LittleLong( fs_checksumFeed );
 
 	// get the hash table size from the number of files in the zip
@@ -2065,7 +2065,7 @@ static pack_t *FS_LoadZipFile(const char *zipfile, const char *basename)
 		}
 	}
 
-	pack = Z_Malloc( sizeof( pack_t ) + i * sizeof(fileInPack_t *) );
+	pack = (pack_t*)Z_Malloc( sizeof( pack_t ) + i * sizeof(fileInPack_t *) );
 	pack->hashSize = i;
 	pack->hashTable = (fileInPack_t **) (((char *) pack) + sizeof( pack_t ));
 	for(i = 0; i < pack->hashSize; i++) {
@@ -2342,7 +2342,7 @@ char **FS_ListFilteredFiles( const char *path, const char *extension, char *filt
 		return NULL;
 	}
 
-	listCopy = Z_Malloc( ( nfiles + 1 ) * sizeof( *listCopy ) );
+	listCopy = (char**)Z_Malloc( ( nfiles + 1 ) * sizeof( *listCopy ) );
 	for ( i = 0 ; i < nfiles ; i++ ) {
 		listCopy[i] = list[i];
 	}
@@ -2456,7 +2456,7 @@ static char** Sys_ConcatenateFileLists( char **list0, char **list1 )
 	totalLength += Sys_CountFileList(list1);
 
 	/* Create new list. */
-	dst = cat = Z_Malloc( ( totalLength + 1 ) * sizeof( char* ) );
+	dst = cat = (char**)Z_Malloc( ( totalLength + 1 ) * sizeof( char* ) );
 
 	/* Copy over lists. */
 	if (list0)
@@ -2715,7 +2715,7 @@ void FS_SortFileList(char **filelist, int numfiles) {
 	int i, j, k, numsortedfiles;
 	char **sortedlist;
 
-	sortedlist = Z_Malloc( ( numfiles + 1 ) * sizeof( *sortedlist ) );
+	sortedlist = (char**)Z_Malloc( ( numfiles + 1 ) * sizeof( *sortedlist ) );
 	sortedlist[0] = NULL;
 	numsortedfiles = 0;
 	for (i = 0; i < numfiles; i++) {
@@ -2829,7 +2829,7 @@ FS_Which
 
 qboolean FS_Which(const char *filename, void *searchPath)
 {
-	searchpath_t *search = searchPath;
+	searchpath_t *search = (searchpath_t*)searchPath;
 
 	if(FS_FOpenFileReadDir(filename, search, NULL, qfalse, qfalse) > 0)
 	{
@@ -2984,7 +2984,7 @@ void FS_AddGameDirectory( const char *path, const char *dir ) {
 
 			fs_packFiles += pak->numfiles;
 
-			search = Z_Malloc(sizeof(searchpath_t));
+			search = (searchpath_t*)Z_Malloc(sizeof(searchpath_t));
 			search->pack = pak;
 			search->next = fs_searchpaths;
 			fs_searchpaths = search;
@@ -3004,8 +3004,8 @@ void FS_AddGameDirectory( const char *path, const char *dir ) {
 			pakfile = FS_BuildOSPath(path, dir, pakdirs[pakdirsi]);
 
 			// add the directory to the search path
-			search = Z_Malloc(sizeof(searchpath_t));
-			search->dir = Z_Malloc(sizeof(*search->dir));
+			search = (searchpath_t*)Z_Malloc(sizeof(searchpath_t));
+			search->dir = (directory_t*)Z_Malloc(sizeof(*search->dir));
 
 			Q_strncpyz(search->dir->path, curpath, sizeof(search->dir->path));	// c:\quake3\baseq3
 			Q_strncpyz(search->dir->fullpath, pakfile, sizeof(search->dir->fullpath));	// c:\quake3\baseq3\mypak.pk3dir
@@ -3025,8 +3025,8 @@ void FS_AddGameDirectory( const char *path, const char *dir ) {
 	//
 	// add the directory to the search path
 	//
-	search = Z_Malloc (sizeof(searchpath_t));
-	search->dir = Z_Malloc( sizeof( *search->dir ) );
+	search = (searchpath_t*)Z_Malloc (sizeof(searchpath_t));
+	search->dir = (directory_t*)Z_Malloc( sizeof( *search->dir ) );
 
 	Q_strncpyz(search->dir->path, path, sizeof(search->dir->path));
 	Q_strncpyz(search->dir->fullpath, curpath, sizeof(search->dir->fullpath));

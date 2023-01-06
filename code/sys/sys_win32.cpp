@@ -119,8 +119,8 @@ char *Sys_DefaultHomePath( void )
 			return NULL;
 		}
 
-		if( !SUCCEEDED( qSHGetFolderPath( NULL, CSIDL_APPDATA,
-						NULL, 0, szPath ) ) )
+		int result= qSHGetFolderPath();//NULL, CSIDL_APPDATA,NULL, 0, szPath
+		if( !SUCCEEDED( result ) )
 		{
 			Com_Printf("Unable to detect CSIDL_APPDATA\n");
 			FreeLibrary(shfolder);
@@ -253,8 +253,8 @@ char* Sys_MicrosoftStorePath(void)
 			return microsoftStorePath;
 		}
 
-		if( !SUCCEEDED( qSHGetFolderPath( NULL, CSIDL_PROGRAM_FILES,
-						NULL, 0, szPath ) ) )
+		int result = qSHGetFolderPath();//NULL, CSIDL_PROGRAM_FILES,NULL, 0, szPath
+		if( !SUCCEEDED( result ) )
 		{
 			Com_Printf("Unable to detect CSIDL_PROGRAM_FILES\n");
 			FreeLibrary(shfolder);
@@ -575,7 +575,7 @@ char **Sys_ListFiles( const char *directory, const char *extension, char *filter
 		if (!nfiles)
 			return NULL;
 
-		listCopy = Z_Malloc( ( nfiles + 1 ) * sizeof( *listCopy ) );
+		listCopy = (char**)Z_Malloc( ( nfiles + 1 ) * sizeof( *listCopy ) );
 		for ( i = 0 ; i < nfiles ; i++ ) {
 			listCopy[i] = list[i];
 		}
@@ -638,7 +638,7 @@ char **Sys_ListFiles( const char *directory, const char *extension, char *filter
 		return NULL;
 	}
 
-	listCopy = Z_Malloc( ( nfiles + 1 ) * sizeof( *listCopy ) );
+	listCopy = (char**)Z_Malloc( ( nfiles + 1 ) * sizeof( *listCopy ) );
 	for ( i = 0 ; i < nfiles ; i++ ) {
 		listCopy[i] = list[i];
 	}

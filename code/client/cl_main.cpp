@@ -405,7 +405,7 @@ static
 void CL_CaptureVoip(void)
 {
 	const float audioMult = cl_voipCaptureMult->value;
-	const qboolean useVad = (cl_voipUseVAD->integer != 0);
+	const qboolean useVad = (cl_voipUseVAD->integer != 0) ? qtrue : qfalse;
 	qboolean initialFrame = qfalse;
 	qboolean finalFrame = qfalse;
 
@@ -3228,7 +3228,7 @@ void CL_InitRef( void ) {
 		Com_Error(ERR_FATAL, "Failed to load renderer");
 	}
 
-	GetRefAPI = Sys_LoadFunction(rendererLib, "GetRefAPI");
+	GetRefAPI = (GetRefAPI_t)Sys_LoadFunction(rendererLib, "GetRefAPI");
 	if(!GetRefAPI)
 	{
 		Com_Error(ERR_FATAL, "Can't load symbol GetRefAPI: '%s'",  Sys_LibraryError());
@@ -3845,7 +3845,7 @@ void CL_ServerInfoPacket( netadr_t from, msg_t *msg ) {
 		gameMismatch = qfalse;
 	else
 #endif
-		gameMismatch = !*gamename || strcmp(gamename, com_gamename->string) != 0;
+		gameMismatch = (!*gamename || strcmp(gamename, com_gamename->string) != 0) ? qtrue : qfalse;
 
 	if (gameMismatch)
 	{

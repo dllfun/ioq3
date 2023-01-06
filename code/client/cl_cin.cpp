@@ -1171,7 +1171,7 @@ redump:
 			if (cinTable[currentHandle].numQuads != 1) cinTable[currentHandle].numQuads = 0;
 			break;
 		case	ROQ_PACKET:
-			cinTable[currentHandle].inMemory = cinTable[currentHandle].roq_flags;
+			cinTable[currentHandle].inMemory = (qboolean)cinTable[currentHandle].roq_flags;
 			cinTable[currentHandle].RoQFrameSize = 0;           // for header
 			break;
 		case	ROQ_QUAD_HANG:
@@ -1214,7 +1214,11 @@ redump:
 		}
 		return;
 	}
-	if (cinTable[currentHandle].inMemory && (cinTable[currentHandle].status != FMV_EOF)) { cinTable[currentHandle].inMemory--; framedata += 8; goto redump; }
+	if (cinTable[currentHandle].inMemory && (cinTable[currentHandle].status != FMV_EOF)) { 
+		cinTable[currentHandle].inMemory=qfalse; 
+		framedata += 8; 
+		goto redump; 
+	}
 //
 // one more frame hits the dust
 //
@@ -1442,15 +1446,15 @@ int CIN_PlayCinematic( const char *arg, int x, int y, int w, int h, int systemBi
 	}
 
 	CIN_SetExtents(currentHandle, x, y, w, h);
-	CIN_SetLooping(currentHandle, (systemBits & CIN_loop)!=0);
+	CIN_SetLooping(currentHandle, (systemBits & CIN_loop)!=0 ? qtrue : qfalse);
 
 	cinTable[currentHandle].CIN_HEIGHT = DEFAULT_CIN_HEIGHT;
 	cinTable[currentHandle].CIN_WIDTH  =  DEFAULT_CIN_WIDTH;
-	cinTable[currentHandle].holdAtEnd = (systemBits & CIN_hold) != 0;
-	cinTable[currentHandle].alterGameState = (systemBits & CIN_system) != 0;
+	cinTable[currentHandle].holdAtEnd = (systemBits & CIN_hold) != 0 ? qtrue : qfalse;
+	cinTable[currentHandle].alterGameState = (systemBits & CIN_system) != 0 ? qtrue : qfalse;
 	cinTable[currentHandle].playonwalls = 1;
-	cinTable[currentHandle].silent = (systemBits & CIN_silent) != 0;
-	cinTable[currentHandle].shader = (systemBits & CIN_shader) != 0;
+	cinTable[currentHandle].silent = (systemBits & CIN_silent) != 0 ? qtrue : qfalse;
+	cinTable[currentHandle].shader = (systemBits & CIN_shader) != 0 ? qtrue : qfalse;
 
 	if (cinTable[currentHandle].alterGameState) {
 		// close the menu
@@ -1591,7 +1595,7 @@ void CIN_DrawCinematic (int handle) {
 	if (cinTable[handle].dirty && (cinTable[handle].CIN_WIDTH != cinTable[handle].drawX || cinTable[handle].CIN_HEIGHT != cinTable[handle].drawY)) {
 		int *buf2;
 
-		buf2 = Hunk_AllocateTempMemory( 256*256*4 );
+		buf2 = (int*)Hunk_AllocateTempMemory( 256*256*4 );
 
 		CIN_ResampleCinematic(handle, buf2);
 
@@ -1677,7 +1681,7 @@ void CIN_UploadCinematic(int handle) {
 		if (cinTable[handle].dirty && (cinTable[handle].CIN_WIDTH != cinTable[handle].drawX || cinTable[handle].CIN_HEIGHT != cinTable[handle].drawY))  {
 			int *buf2;
 
-			buf2 = Hunk_AllocateTempMemory( 256*256*4 );
+			buf2 = (int*)Hunk_AllocateTempMemory( 256*256*4 );
 
 			CIN_ResampleCinematic(handle, buf2);
 

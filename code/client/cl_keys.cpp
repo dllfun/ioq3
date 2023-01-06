@@ -501,7 +501,7 @@ void Field_KeyDownEvent( field_t *edit, int key ) {
 			break;
 
 		case K_INS:
-			key_overstrikeMode = !key_overstrikeMode;
+			key_overstrikeMode = !key_overstrikeMode ? qtrue : qfalse;
 			break;
 
 		default:
@@ -1193,10 +1193,10 @@ void CL_ParseBinding( int key, qboolean down, unsigned time )
 	Q_strncpyz( buf, keys[key].binding, sizeof( buf ) );
 
 	// run all bind commands if console, ui, etc aren't reading keys
-	allCommands = ( Key_GetCatcher( ) == 0 );
+	allCommands = ( Key_GetCatcher( ) == 0 ? qtrue : qfalse);
 
 	// allow button up commands if in game even if key catcher is set
-	allowUpCmds = ( clc.state != CA_DISCONNECTED );
+	allowUpCmds = ( clc.state != CA_DISCONNECTED ? qtrue : qfalse);
 
 	while( 1 )
 	{
@@ -1428,7 +1428,7 @@ void Key_ClearStates (void)
 			CL_KeyEvent( i, qfalse, 0 );
 
 		}
-		keys[i].down = 0;
+		keys[i].down = qfalse;
 		keys[i].repeats = 0;
 	}
 }

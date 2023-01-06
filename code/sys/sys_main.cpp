@@ -152,7 +152,7 @@ char *Sys_GetClipboardData(void)
 		if ( cliptext[0] != '\0' ) {
 			size_t bufsize = strlen( cliptext ) + 1;
 
-			data = Z_Malloc( bufsize );
+			data = (char*)Z_Malloc( bufsize );
 			Q_strncpyz( data, cliptext, bufsize );
 
 			// find first listed char and set to '\0'
@@ -234,7 +234,7 @@ static qboolean Sys_WritePIDFile( const char *gamedir )
 	}
 
 	if( FS_CreatePath( pidFile ) ) {
-		return 0;
+		return qfalse;
 	}
 
 	if( ( f = fopen( pidFile, "w" ) ) != NULL )
@@ -318,15 +318,15 @@ Sys_GetProcessorFeatures
 */
 cpuFeatures_t Sys_GetProcessorFeatures( void )
 {
-	cpuFeatures_t features = 0;
+	cpuFeatures_t features = (cpuFeatures_t)0;
 
 #ifndef DEDICATED
-	if( SDL_HasRDTSC( ) )      features |= CF_RDTSC;
-	if( SDL_Has3DNow( ) )      features |= CF_3DNOW;
-	if( SDL_HasMMX( ) )        features |= CF_MMX;
-	if( SDL_HasSSE( ) )        features |= CF_SSE;
-	if( SDL_HasSSE2( ) )       features |= CF_SSE2;
-	if( SDL_HasAltiVec( ) )    features |= CF_ALTIVEC;
+	if( SDL_HasRDTSC( ) )      features = (cpuFeatures_t)(features | CF_RDTSC);
+	if( SDL_Has3DNow( ) )      features = (cpuFeatures_t)(features | CF_3DNOW);
+	if( SDL_HasMMX( ) )        features = (cpuFeatures_t)(features | CF_MMX);
+	if( SDL_HasSSE( ) )        features = (cpuFeatures_t)(features | CF_SSE);
+	if( SDL_HasSSE2( ) )       features = (cpuFeatures_t)(features | CF_SSE2);
+	if( SDL_HasAltiVec( ) )    features = (cpuFeatures_t)(features | CF_ALTIVEC);
 #endif
 
 	return features;
@@ -602,8 +602,8 @@ void *Sys_LoadGameDll(const char *name,
 		return NULL;
 	}
 
-	dllEntry = Sys_LoadFunction( libHandle, "dllEntry" );
-	*entryPoint = Sys_LoadFunction( libHandle, "vmMain" );
+	dllEntry = (void (*)(intptr_t(*)(intptr_t, ...)))Sys_LoadFunction( libHandle, "dllEntry" );
+	*entryPoint = (vmMainProc)Sys_LoadFunction( libHandle, "vmMain" );
 
 	if ( !*entryPoint || !dllEntry )
 	{
@@ -740,7 +740,7 @@ int main( int argc, char **argv )
 	// Concatenate the command line for passing to Com_Init
 	for( i = 1; i < argc; i++ )
 	{
-		const qboolean containsSpaces = strchr(argv[i], ' ') != NULL;
+		const qboolean containsSpaces = (strchr(argv[i], ' ') != NULL) ? qtrue : qfalse;
 		if (containsSpaces)
 			Q_strcat( commandLine, sizeof( commandLine ), "\"" );
 
