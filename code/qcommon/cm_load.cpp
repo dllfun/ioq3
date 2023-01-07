@@ -294,6 +294,8 @@ void CMod_LoadLeafs (lump_t *l)
 		out->firstLeafSurface = LittleLong (in->firstLeafSurface);
 		out->numLeafSurfaces = LittleLong (in->numLeafSurfaces);
 
+		//if(i % 3 == 0) out->numLeafBrushes = LittleLong(0);
+
 		if (out->cluster >= cm.numClusters)
 			cm.numClusters = out->cluster + 1;
 		if (out->area >= cm.numAreas)

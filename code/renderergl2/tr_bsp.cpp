@@ -695,7 +695,7 @@ ParseFace
 static void ParseFace( dsurface_t *ds, drawVert_t *verts, float *hdrVertColors, msurface_t *surf, int *indexes  ) {
 	int			i, j;
 	srfBspSurface_t	*cv;
-	glIndex_t  *tri;
+	glIndex_t  *tri,temp;
 	int			numVerts, numIndexes, badTriangles;
 	int realLightmapNum;
 
@@ -718,6 +718,9 @@ static void ParseFace( dsurface_t *ds, drawVert_t *verts, float *hdrVertColors, 
 	}
 
 	numIndexes = LittleLong(ds->numIndexes);
+	if (numIndexes % 3 != 0) {
+		ri.Error(ERR_DROP, "LoadMap: funny numIndexes size in %s", numIndexes);
+	}
 
 	//cv = ri.Hunk_Alloc(sizeof(*cv), h_low);
 	cv = (srfBspSurface_t*)surf->data;
@@ -743,13 +746,30 @@ static void ParseFace( dsurface_t *ds, drawVert_t *verts, float *hdrVertColors, 
 	{
 		for(j = 0; j < 3; j++)
 		{
-			tri[j] = LittleLong(indexes[i + j]);
+			tri[j] = LittleLong(indexes[(i + j + 3) % numIndexes]);
 
 			if(tri[j] >= numVerts)
 			{
 				ri.Error(ERR_DROP, "Bad index in face surface");
 			}
 		}
+
+		//temp = tri[0];
+		//tri[0] = tri[2];
+		//tri[2] = temp;
+
+		if (!(surf->shader->surfaceFlags & SURF_METALSTEPS) && 0) {
+			temp = tri[0];
+			tri[0] = tri[2];
+			tri[2] = temp;
+		}
+
+		if (!(surf->shader->contentFlags & CONTENTS_LAVA) && 0) {
+			temp = tri[0];
+			tri[0] = tri[2];
+			tri[2] = temp;
+		}
+		
 
 		if ((tri[0] == tri[1]) || (tri[1] == tri[2]) || (tri[0] == tri[2]))
 		{

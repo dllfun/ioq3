@@ -365,7 +365,9 @@ void RB_BeginDrawingView (void) {
 	GL_State( GLS_DEFAULT );
 	// clear relevant buffers
 	clearBits = GL_DEPTH_BUFFER_BIT;
-
+	if (((glState.currentFBO == tr.renderFbo || (glState.currentFBO == NULL && tr.renderFbo == NULL)) && (!(backEnd.viewParms.isMirror && !backEnd.viewParms.isPortal)))) {//|| (glState.currentFBO == tr.screenScratchFbo)
+		clearBits |= GL_COLOR_BUFFER_BIT;
+	}
 	if ( r_measureOverdraw->integer || r_shadows->integer == 2 )
 	{
 		clearBits |= GL_STENCIL_BUFFER_BIT;

@@ -957,7 +957,7 @@ const void *RB_TakeVideoFrameCmd( const void *data )
 void GL_SetDefaultState( void )
 {
 	qglClearDepth( 1.0f );
-
+	//glFrontFace(GL_CCW);
 	qglCullFace(GL_FRONT);
 
 	GL_BindNullTextures();

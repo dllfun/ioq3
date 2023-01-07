@@ -274,7 +274,7 @@ void EA_Walk(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_WALK;
+	//bi->actionflags |= ACTION_WALK;
 } //end of the function EA_Walk
 //===========================================================================
 //
@@ -302,7 +302,7 @@ void EA_MoveUp(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_MOVEUP;
+	//bi->actionflags |= ACTION_MOVEUP;
 } //end of the function EA_MoveUp
 //===========================================================================
 //
@@ -316,7 +316,7 @@ void EA_MoveDown(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_MOVEDOWN;
+	//bi->actionflags |= ACTION_MOVEDOWN;
 } //end of the function EA_MoveDown
 //===========================================================================
 //
@@ -330,7 +330,7 @@ void EA_MoveForward(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_MOVEFORWARD;
+	//bi->actionflags |= ACTION_MOVEFORWARD;
 } //end of the function EA_MoveForward
 //===========================================================================
 //
@@ -344,7 +344,7 @@ void EA_MoveBack(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_MOVEBACK;
+	//bi->actionflags |= ACTION_MOVEBACK;
 } //end of the function EA_MoveBack
 //===========================================================================
 //
@@ -358,7 +358,7 @@ void EA_MoveLeft(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_MOVELEFT;
+	//bi->actionflags |= ACTION_MOVELEFT;
 } //end of the function EA_MoveLeft
 //===========================================================================
 //
@@ -372,7 +372,7 @@ void EA_MoveRight(int client)
 
 	bi = &botinputs[client];
 
-	bi->actionflags |= ACTION_MOVERIGHT;
+	//bi->actionflags |= ACTION_MOVERIGHT;
 } //end of the function EA_MoveRight
 //===========================================================================
 //
